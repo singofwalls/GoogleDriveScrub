@@ -7,6 +7,10 @@
 *.userosscache
 *.sln.docstates
 .mypy*
+.venv
+Pip*
+credentials.json
+.vscode
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
