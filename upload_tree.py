@@ -4,11 +4,12 @@ from setup_drive_api import get_service, SCOPES
 import yaml
 
 FOLDER_TYPE = "application/vnd.google-apps.folder"
+TREE_FILE = "tree.yaml"
 
 
 def get_tree():
     """Load the tree from the yaml file."""
-    with open("tree.yaml") as f:
+    with open(TREE_FILE) as f:
         try:
             return yaml.load(f, Loader=yaml.SafeLoader)
         except FileNotFoundError as e:
@@ -27,7 +28,7 @@ def add_folder(service, folder, parent_id=None):
         file_metadata["parents"] = [parent_id]
     uploaded_folder = service.files().create(body=file_metadata, fields="id").execute()
     uploaded_folder_id = uploaded_folder["id"]
-    
+
     # Set permissions
     for permission in folder["permissions"]:
         email = permission["emailAddress"]
@@ -35,7 +36,7 @@ def add_folder(service, folder, parent_id=None):
         body = {"role": permission_role, "emailAddress": email, "type": "user"}
         # Notification required to be sent for transfer of ownership
         transferOwner = permission_role == "owner"
-        
+
         service.permissions().create(
             fileId=uploaded_folder_id,
             supportsAllDrives=True,

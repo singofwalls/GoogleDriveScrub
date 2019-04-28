@@ -7,6 +7,8 @@ FOLDER_TYPE = "application/vnd.google-apps.folder"
 QUERY_ADDENDUM = f"mimeType = '{FOLDER_TYPE}' and not trashed"
 FIELDS = "nextPageToken, files(id, name, permissions(type, id, emailAddress, role, \
     deleted), kind, mimeType, parents, trashed)"
+ROOTS_FILE = "roots.txt"
+TREE_FILE = "tree.yaml"
 
 
 def get_root_folder(service, root_name):
@@ -123,13 +125,13 @@ def get_root_names():
 
     # TODO: Test root.txt = "/" for using actual drive root as root
     # TODO: Test multiple roots
-    # TODO: Move file names to globals
+    # TODO: Change name of project (update creds)
 
     def is_not_comment(line):
         """Check if the given line is a comment."""
         return not line.startswith("#") and line
 
-    with open("roots.txt") as f:
+    with open(ROOTS_FILE) as f:
         return list(filter(is_not_comment, f.read().split("\n")))
 
 
@@ -143,7 +145,7 @@ def main():
     for root in get_root_names():
         # Obtain subfolders in root
         construct_tree(service, root, tree)
-    with open("tree.yaml", "w") as f:
+    with open(TREE_FILE, "w") as f:
         yaml.dump(tree, f)
 
 
