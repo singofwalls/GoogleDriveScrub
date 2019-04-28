@@ -1,7 +1,6 @@
 """Create a json to store tree structure and sharing permissions for the given roots."""
 
 from setup_drive_api import get_service, SCOPES
-from permissions import update_permissions_file
 import yaml
 
 FOLDER_TYPE = "application/vnd.google-apps.folder"
@@ -17,7 +16,7 @@ def get_root_folder(service, root_name):
         """Get the folder object based on name and parent."""
         parent_string = ""
         if parent_id != "root":
-            parent_string = f" and '{parent_id}' in parents" 
+            parent_string = f" and '{parent_id}' in parents"
         results = (
             service.files()
             .list(
@@ -84,7 +83,7 @@ def get_sub_folders(service, parent_id):
 
 def construct_tree(service, root_name, tree=[]):
     """Construct the folder tree from the given list of folders.
-    
+
     :param tree: A list of subtrees which is altered in-place
     """
 
@@ -93,10 +92,8 @@ def construct_tree(service, root_name, tree=[]):
         for permission in folder["permissions"]:
             if "deleted" not in permission or not permission["deleted"]:
                 email = permission["emailAddress"]
-                permission_id = str(permission["id"])
                 role = permission["role"]
                 permissions.append({"role": role, "emailAddress": email})
-                update_permissions_file(service, email, permission_id)
         tree.append(
             {"name": folder["name"], "permissions": permissions, "sub_folders": []}
         )
@@ -135,6 +132,7 @@ def get_root_names():
 
 
 def main():
+    """Run the program."""
     # Get drive service
     service = get_service(SCOPES)
 
