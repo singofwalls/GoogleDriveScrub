@@ -1,4 +1,4 @@
 # Newline-delimited list of root folders to scan and reconstruct
 # Lines preceded with a '#' are ignored
 
-BSRoot 1/Curriculum
+BSroot/Curriculum

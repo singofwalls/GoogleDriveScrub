@@ -21,20 +21,30 @@ def get_tree():
 
 def add_folder(service, folder, parent_id=None):
     """Recursively upload all folders."""
+    # Upload folder
     file_metadata = {"name": folder["name"], "mimeType": FOLDER_TYPE}
     if not isinstance(parent_id, type(None)):
         file_metadata["parents"] = [parent_id]
     uploaded_folder = service.files().create(body=file_metadata, fields="id").execute()
     uploaded_folder_id = uploaded_folder["id"]
+    
+    # Set permissions
     for permission in folder["permissions"]:
         email = permission["emailAddress"]
         permission_role = permission["role"]
+        body = {"role": permission_role, "emailAddress": email, "type": "user"}
+        # Notification required to be sent for transfer of ownership
+        transferOwner = permission_role == "owner"
+        
         service.permissions().create(
             fileId=uploaded_folder_id,
             supportsAllDrives=True,
-            sendNotificationEmail=False,
-            body={"role": permission_role, "emailAddress": email},
+            transferOwnership=transferOwner,
+            sendNotificationEmail=transferOwner,
+            body=body,
         ).execute()
+
+    # Recurse to upload sub_folders
     for sub_folder in folder["sub_folders"]:
         add_folder(service, sub_folder, uploaded_folder["id"])
 
@@ -49,3 +59,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+# TODO: Add progress bar
+# TODO: Document better
+# TODO: Implement inherited permissions
