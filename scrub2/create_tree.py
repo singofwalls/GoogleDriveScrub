@@ -1,12 +1,13 @@
 """Create a json to store tree structure and sharing permissions for the given roots."""
 
-from setup_drive_api import get_service
+from setup_drive_api import get_service, SCOPES
+from permissions import update_permissions_file
 import yaml
 
-SCOPES = ["https://www.googleapis.com/auth/drive.metadata.readonly"]
 FOLDER_TYPE = "application/vnd.google-apps.folder"
 QUERY_ADDENDUM = f"mimeType = '{FOLDER_TYPE}' and not trashed"
-FIELDS = "nextPageToken, files(id, name, permissions, kind, mimeType, parents, trashed)"
+FIELDS = "nextPageToken, files(id, name, permissions(type, id, emailAddress, role, \
+    deleted), kind, mimeType, parents, trashed)"
 
 
 def get_root_folder(service, root_name):
@@ -79,23 +80,24 @@ def get_sub_folders(service, parent_id):
     return folders
 
 
-def construct_tree(service, root_name, tree={}):
+def construct_tree(service, root_name, tree=[]):
     """Construct the folder tree from the given list of folders.
     
     :param tree: A list of subtrees which is altered in-place
     """
 
-    def add_folder_dict(folder, tree):
+    def add_folder_dict(service, folder, tree):
         permissions = []
         for permission in folder["permissions"]:
             if "deleted" not in permission or not permission["deleted"]:
-                permissions.append(
-                    {
-                        "role": permission["role"],
-                        "emailAddress": permission["emailAddress"],
-                    }
-                )
-        tree[folder["name"]] = {"permissions": permissions, "sub_folders": {}}
+                email = permission["emailAddress"]
+                permission_id = permission["id"]
+                role = permission["role"]
+                permissions.append({"role": role, "emailAddress": email})
+                update_permissions_file(service, email, permission_id)
+        tree.append(
+            {"name": folder["name"], "permissions": permissions, "sub_folders": []}
+        )
 
     def construct_tree_rec(service, tree, parent_id):
         """Recusively construct the tree."""
@@ -104,16 +106,17 @@ def construct_tree(service, root_name, tree={}):
 
         for folder in folders:
             folder_id = folder["id"]
-            add_folder_dict(folder, tree)
+            add_folder_dict(service, folder, tree)
 
-            construct_tree_rec(service, tree[folder["name"]]["sub_folders"], folder_id)
+            construct_tree_rec(service, tree[-1]["sub_folders"], folder_id)
 
     root_folder = get_root_folder(service, root_name)
     root_id = root_folder["id"]
+    root_name = root_folder["name"]
 
-    add_folder_dict(root_folder, tree)
+    add_folder_dict(service, root_folder, tree)
 
-    construct_tree_rec(service, tree, root_id)
+    construct_tree_rec(service, tree[-1]["sub_folders"], root_id)
 
 
 def get_root_names():
@@ -133,13 +136,14 @@ def main():
     # Get drive service
     service = get_service(SCOPES)
 
-    tree = {}
+    tree = []
     # Construct tree for each root
     for root in get_root_names():
         # Obtain subfolders in root
         construct_tree(service, root, tree)
     with open("tree.yaml", "w") as f:
         yaml.dump(tree, f)
+
 
 if __name__ == "__main__":
     main()

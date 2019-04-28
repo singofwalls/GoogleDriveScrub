@@ -6,6 +6,12 @@ from googleapiclient.discovery import build
 from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
 
+# Delete token.pickle if scopes changed
+SCOPES = [
+    "https://www.googleapis.com/auth/drive.file",
+    "https://www.googleapis.com/auth/drive.metadata.readonly",
+]
+
 
 def get_service(scopes):
     """Set-up the drive api and return the obtained service object."""
