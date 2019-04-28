@@ -1,4 +1,7 @@
-"""Create a json to store tree structure and sharing permissions for the given roots."""
+"""Create a yaml to store the tree structure for the given roots from the authed drive.
+
+Sharing permissions are perserved.
+"""
 
 from setup_drive_api import get_service, SCOPES
 import yaml

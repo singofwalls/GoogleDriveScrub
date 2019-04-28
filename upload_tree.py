@@ -1,4 +1,4 @@
-"""Load a tree from a yaml into the drive."""
+"""Load a tree with sharing permissions from a yaml into the drive."""
 
 from setup_drive_api import get_service, SCOPES
 import yaml
