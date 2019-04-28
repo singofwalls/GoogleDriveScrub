@@ -3,6 +3,7 @@
 from setup_drive_api import get_service, SCOPES
 from permissions import get_permission_id
 import yaml
+from apiclient import errors
 
 FOLDER_TYPE = "application/vnd.google-apps.folder"
 
@@ -27,17 +28,35 @@ def add_folder(service, folder, parent_id=None):
         file_metadata["parents"] = [parent_id]
     uploaded_folder = service.files().create(body=file_metadata, fields="id").execute()
     uploaded_folder_id = uploaded_folder["id"]
+    folder_name = folder["name"]
     for permission in folder["permissions"]:
         email = permission["emailAddress"]
         permission_role = permission["role"]
         permission_id = get_permission_id(email)
-
-        service.permissions().update(
-            fileId=uploaded_folder_id,
-            permissionId=permission_id,
-            supportsAllDrives=True,
-            body={"role": permission_role},
-        )
+        try:
+            service.permissions().update(
+                fileId=uploaded_folder_id,
+                permissionId=permission_id,
+                supportsAllDrives=True,
+                body={"role": permission_role},
+            ).execute()
+            print(
+                "Added permission",
+                permission_role,
+                "for email",
+                email,
+                "to folder",
+                folder_name,
+            )
+        except errors.HttpError as e:
+            print(
+                "Could not add permission",
+                permission_role,
+                "for email",
+                email,
+                "to folder",
+                folder_name,
+            )
     for sub_folder in folder["sub_folders"]:
         add_folder(service, sub_folder, uploaded_folder["id"])
 

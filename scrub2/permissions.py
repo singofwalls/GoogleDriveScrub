@@ -17,6 +17,7 @@ def get_permissions():
             return {}
         return permissions
 
+
 def update_permissions_file(service, email, permission_id):
     """Update the permissions yaml file with given user's id."""
 

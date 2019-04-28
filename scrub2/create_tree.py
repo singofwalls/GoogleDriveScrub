@@ -15,15 +15,17 @@ def get_root_folder(service, root_name):
 
     def get_folder(service, folder_name, parent_id):
         """Get the folder object based on name and parent."""
+        parent_string = ""
+        if parent_id != "root":
+            parent_string = f" and '{parent_id}' in parents" 
         results = (
             service.files()
             .list(
                 pageToken=None,
                 fields=FIELDS,
-                q=f"'{parent_id}' in parents and name = '{folder_name}' \
-                    and {QUERY_ADDENDUM}",
+                q=f"name = '{folder_name}' and {QUERY_ADDENDUM}" + parent_string,
                 corpora="allDrives",
-                includeTeamDriveItems=True,
+                includeItemsFromAllDrives=True,
                 supportsAllDrives=True,
             )
             .execute()
@@ -56,7 +58,7 @@ def get_sub_folders(service, parent_id):
                 fields=FIELDS,
                 q=f"'{parent_id}' in parents and {QUERY_ADDENDUM}",
                 corpora="allDrives",
-                includeTeamDriveItems=True,
+                includeItemsFromAllDrives=True,
                 supportsAllDrives=True,
             )
             .execute()
@@ -91,7 +93,7 @@ def construct_tree(service, root_name, tree=[]):
         for permission in folder["permissions"]:
             if "deleted" not in permission or not permission["deleted"]:
                 email = permission["emailAddress"]
-                permission_id = permission["id"]
+                permission_id = str(permission["id"])
                 role = permission["role"]
                 permissions.append({"role": role, "emailAddress": email})
                 update_permissions_file(service, email, permission_id)
