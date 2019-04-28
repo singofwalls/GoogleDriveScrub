@@ -1,0 +1,1508 @@
+- name: Curriculum Test
+  permissions:
+  - emailAddress: it@ksbstatesim.org
+    role: writer
+  - emailAddress: john.shively@ksbstatesim.org
+    role: writer
+  - emailAddress: pumposh@live.com
+    role: writer
+  - emailAddress: DroseOutdoors@gmail.com
+    role: writer
+  - emailAddress: jacobthomasstark@gmail.com
+    role: writer
+  - emailAddress: 8.tpledger@kscholars.org
+    role: writer
+  - emailAddress: JpShively1@gmail.com
+    role: writer
+  - emailAddress: thaddeustuck@gmail.com
+    role: writer
+  - emailAddress: ring.scott1@gmail.com
+    role: writer
+  - emailAddress: MathewsReece@gmail.com
+    role: writer
+  - emailAddress: keeprunning218@gmail.com
+    role: owner
+  sub_folders:
+  - name: Kansas State Senate
+    permissions:
+    - emailAddress: it@ksbstatesim.org
+      role: writer
+    - emailAddress: john.shively@ksbstatesim.org
+      role: writer
+    - emailAddress: pumposh@live.com
+      role: writer
+    - emailAddress: DroseOutdoors@gmail.com
+      role: writer
+    - emailAddress: 8.tpledger@kscholars.org
+      role: writer
+    - emailAddress: JpShively1@gmail.com
+      role: writer
+    - emailAddress: thaddeustuck@gmail.com
+      role: writer
+    - emailAddress: MathewsReece@gmail.com
+      role: writer
+    - emailAddress: house@ksbstatesim.org
+      role: writer
+    - emailAddress: jacobthomasstark@gmail.com
+      role: writer
+    - emailAddress: senate@ksbstatesim.org
+      role: writer
+    - emailAddress: ring.scott1@gmail.com
+      role: writer
+    - emailAddress: keeprunning218@gmail.com
+      role: owner
+    sub_folders:
+    - name: Form Publisher Output's Folder
+      permissions:
+      - emailAddress: it@ksbstatesim.org
+        role: writer
+      - emailAddress: john.shively@ksbstatesim.org
+        role: writer
+      - emailAddress: pumposh@live.com
+        role: writer
+      - emailAddress: DroseOutdoors@gmail.com
+        role: writer
+      - emailAddress: 8.tpledger@kscholars.org
+        role: writer
+      - emailAddress: JpShively1@gmail.com
+        role: writer
+      - emailAddress: thaddeustuck@gmail.com
+        role: writer
+      - emailAddress: MathewsReece@gmail.com
+        role: writer
+      - emailAddress: house@ksbstatesim.org
+        role: writer
+      - emailAddress: jacobthomasstark@gmail.com
+        role: writer
+      - emailAddress: senate@ksbstatesim.org
+        role: writer
+      - emailAddress: ring.scott1@gmail.com
+        role: writer
+      - emailAddress: keeprunning218@gmail.com
+        role: owner
+      sub_folders: []
+  - name: Kansas House of Representatives
+    permissions:
+    - emailAddress: it@ksbstatesim.org
+      role: writer
+    - emailAddress: house@ksbstatesim.org
+      role: writer
+    - emailAddress: john.shively@ksbstatesim.org
+      role: writer
+    - emailAddress: pumposh@live.com
+      role: writer
+    - emailAddress: DroseOutdoors@gmail.com
+      role: writer
+    - emailAddress: jacobthomasstark@gmail.com
+      role: writer
+    - emailAddress: 8.tpledger@kscholars.org
+      role: writer
+    - emailAddress: JpShively1@gmail.com
+      role: writer
+    - emailAddress: thaddeustuck@gmail.com
+      role: writer
+    - emailAddress: ring.scott1@gmail.com
+      role: writer
+    - emailAddress: MathewsReece@gmail.com
+      role: writer
+    - emailAddress: keeprunning218@gmail.com
+      role: owner
+    sub_folders: []
+  - name: Department Share
+    permissions:
+    - emailAddress: it@ksbstatesim.org
+      role: writer
+    - emailAddress: john.shively@ksbstatesim.org
+      role: writer
+    - emailAddress: pumposh@live.com
+      role: writer
+    - emailAddress: DroseOutdoors@gmail.com
+      role: writer
+    - emailAddress: jacobthomasstark@gmail.com
+      role: writer
+    - emailAddress: 8.tpledger@kscholars.org
+      role: writer
+    - emailAddress: JpShively1@gmail.com
+      role: writer
+    - emailAddress: thaddeustuck@gmail.com
+      role: writer
+    - emailAddress: ring.scott1@gmail.com
+      role: writer
+    - emailAddress: MathewsReece@gmail.com
+      role: writer
+    - emailAddress: keeprunning218@gmail.com
+      role: owner
+    sub_folders:
+    - name: Dept. of Economy Share
+      permissions:
+      - emailAddress: it@ksbstatesim.org
+        role: writer
+      - emailAddress: john.shively@ksbstatesim.org
+        role: writer
+      - emailAddress: pumposh@live.com
+        role: writer
+      - emailAddress: DroseOutdoors@gmail.com
+        role: writer
+      - emailAddress: jacobthomasstark@gmail.com
+        role: writer
+      - emailAddress: 8.tpledger@kscholars.org
+        role: writer
+      - emailAddress: JpShively1@gmail.com
+        role: writer
+      - emailAddress: thaddeustuck@gmail.com
+        role: writer
+      - emailAddress: economy@ksbstatesim.org
+        role: writer
+      - emailAddress: ring.scott1@gmail.com
+        role: writer
+      - emailAddress: MathewsReece@gmail.com
+        role: writer
+      - emailAddress: keeprunning218@gmail.com
+        role: owner
+      sub_folders: []
+    - name: Dept. of Humanities Share
+      permissions:
+      - emailAddress: it@ksbstatesim.org
+        role: writer
+      - emailAddress: john.shively@ksbstatesim.org
+        role: writer
+      - emailAddress: pumposh@live.com
+        role: writer
+      - emailAddress: DroseOutdoors@gmail.com
+        role: writer
+      - emailAddress: jacobthomasstark@gmail.com
+        role: writer
+      - emailAddress: 8.tpledger@kscholars.org
+        role: writer
+      - emailAddress: JpShively1@gmail.com
+        role: writer
+      - emailAddress: humanities@ksbstatesim.org
+        role: writer
+      - emailAddress: thaddeustuck@gmail.com
+        role: writer
+      - emailAddress: ring.scott1@gmail.com
+        role: writer
+      - emailAddress: MathewsReece@gmail.com
+        role: writer
+      - emailAddress: keeprunning218@gmail.com
+        role: owner
+      sub_folders: []
+    - name: Dept. of Natural Resources Share
+      permissions:
+      - emailAddress: it@ksbstatesim.org
+        role: writer
+      - emailAddress: john.shively@ksbstatesim.org
+        role: writer
+      - emailAddress: pumposh@live.com
+        role: writer
+      - emailAddress: DroseOutdoors@gmail.com
+        role: writer
+      - emailAddress: jacobthomasstark@gmail.com
+        role: writer
+      - emailAddress: 8.tpledger@kscholars.org
+        role: writer
+      - emailAddress: JpShively1@gmail.com
+        role: writer
+      - emailAddress: naturalresources@ksbstatesim.org
+        role: writer
+      - emailAddress: thaddeustuck@gmail.com
+        role: writer
+      - emailAddress: ring.scott1@gmail.com
+        role: writer
+      - emailAddress: MathewsReece@gmail.com
+        role: writer
+      - emailAddress: keeprunning218@gmail.com
+        role: owner
+      sub_folders: []
+  - name: Counties Share
+    permissions:
+    - emailAddress: it@ksbstatesim.org
+      role: writer
+    - emailAddress: john.shively@ksbstatesim.org
+      role: writer
+    - emailAddress: pumposh@live.com
+      role: writer
+    - emailAddress: DroseOutdoors@gmail.com
+      role: writer
+    - emailAddress: jacobthomasstark@gmail.com
+      role: writer
+    - emailAddress: 8.tpledger@kscholars.org
+      role: writer
+    - emailAddress: JpShively1@gmail.com
+      role: writer
+    - emailAddress: thaddeustuck@gmail.com
+      role: writer
+    - emailAddress: ring.scott1@gmail.com
+      role: writer
+    - emailAddress: MathewsReece@gmail.com
+      role: writer
+    - emailAddress: keeprunning218@gmail.com
+      role: owner
+    sub_folders:
+    - name: Seitz Share
+      permissions:
+      - emailAddress: it@ksbstatesim.org
+        role: writer
+      - emailAddress: john.shively@ksbstatesim.org
+        role: writer
+      - emailAddress: pumposh@live.com
+        role: writer
+      - emailAddress: seitz@ksbstatesim.org
+        role: writer
+      - emailAddress: DroseOutdoors@gmail.com
+        role: writer
+      - emailAddress: jacobthomasstark@gmail.com
+        role: writer
+      - emailAddress: 8.tpledger@kscholars.org
+        role: writer
+      - emailAddress: JpShively1@gmail.com
+        role: writer
+      - emailAddress: thaddeustuck@gmail.com
+        role: writer
+      - emailAddress: ring.scott1@gmail.com
+        role: writer
+      - emailAddress: MathewsReece@gmail.com
+        role: writer
+      - emailAddress: keeprunning218@gmail.com
+        role: owner
+      sub_folders:
+      - name: Wiles Share
+        permissions:
+        - emailAddress: it@ksbstatesim.org
+          role: writer
+        - emailAddress: john.shively@ksbstatesim.org
+          role: writer
+        - emailAddress: pumposh@live.com
+          role: writer
+        - emailAddress: seitz@ksbstatesim.org
+          role: writer
+        - emailAddress: DroseOutdoors@gmail.com
+          role: writer
+        - emailAddress: wiles@ksbstatesim.org
+          role: writer
+        - emailAddress: 8.tpledger@kscholars.org
+          role: writer
+        - emailAddress: JpShively1@gmail.com
+          role: writer
+        - emailAddress: thaddeustuck@gmail.com
+          role: writer
+        - emailAddress: MathewsReece@gmail.com
+          role: writer
+        - emailAddress: jacobthomasstark@gmail.com
+          role: writer
+        - emailAddress: ring.scott1@gmail.com
+          role: writer
+        - emailAddress: keeprunning218@gmail.com
+          role: owner
+        sub_folders: []
+      - name: Whorley Share
+        permissions:
+        - emailAddress: it@ksbstatesim.org
+          role: writer
+        - emailAddress: john.shively@ksbstatesim.org
+          role: writer
+        - emailAddress: whorley@ksbstatesim.org
+          role: writer
+        - emailAddress: pumposh@live.com
+          role: writer
+        - emailAddress: seitz@ksbstatesim.org
+          role: writer
+        - emailAddress: DroseOutdoors@gmail.com
+          role: writer
+        - emailAddress: 8.tpledger@kscholars.org
+          role: writer
+        - emailAddress: JpShively1@gmail.com
+          role: writer
+        - emailAddress: thaddeustuck@gmail.com
+          role: writer
+        - emailAddress: MathewsReece@gmail.com
+          role: writer
+        - emailAddress: jacobthomasstark@gmail.com
+          role: writer
+        - emailAddress: ring.scott1@gmail.com
+          role: writer
+        - emailAddress: keeprunning218@gmail.com
+          role: owner
+        sub_folders: []
+      - name: Werring Share
+        permissions:
+        - emailAddress: it@ksbstatesim.org
+          role: writer
+        - emailAddress: john.shively@ksbstatesim.org
+          role: writer
+        - emailAddress: pumposh@live.com
+          role: writer
+        - emailAddress: seitz@ksbstatesim.org
+          role: writer
+        - emailAddress: DroseOutdoors@gmail.com
+          role: writer
+        - emailAddress: 8.tpledger@kscholars.org
+          role: writer
+        - emailAddress: JpShively1@gmail.com
+          role: writer
+        - emailAddress: thaddeustuck@gmail.com
+          role: writer
+        - emailAddress: MathewsReece@gmail.com
+          role: writer
+        - emailAddress: jacobthomasstark@gmail.com
+          role: writer
+        - emailAddress: werring@ksbstatesim.org
+          role: writer
+        - emailAddress: ring.scott1@gmail.com
+          role: writer
+        - emailAddress: keeprunning218@gmail.com
+          role: owner
+        sub_folders: []
+    - name: Powell Share
+      permissions:
+      - emailAddress: it@ksbstatesim.org
+        role: writer
+      - emailAddress: john.shively@ksbstatesim.org
+        role: writer
+      - emailAddress: pumposh@live.com
+        role: writer
+      - emailAddress: powell@ksbstatesim.org
+        role: writer
+      - emailAddress: DroseOutdoors@gmail.com
+        role: writer
+      - emailAddress: jacobthomasstark@gmail.com
+        role: writer
+      - emailAddress: 8.tpledger@kscholars.org
+        role: writer
+      - emailAddress: JpShively1@gmail.com
+        role: writer
+      - emailAddress: thaddeustuck@gmail.com
+        role: writer
+      - emailAddress: ring.scott1@gmail.com
+        role: writer
+      - emailAddress: MathewsReece@gmail.com
+        role: writer
+      - emailAddress: keeprunning218@gmail.com
+        role: owner
+      sub_folders:
+      - name: Spigarelli Share
+        permissions:
+        - emailAddress: it@ksbstatesim.org
+          role: writer
+        - emailAddress: john.shively@ksbstatesim.org
+          role: writer
+        - emailAddress: pumposh@live.com
+          role: writer
+        - emailAddress: powell@ksbstatesim.org
+          role: writer
+        - emailAddress: DroseOutdoors@gmail.com
+          role: writer
+        - emailAddress: 8.tpledger@kscholars.org
+          role: writer
+        - emailAddress: JpShively1@gmail.com
+          role: writer
+        - emailAddress: spigarelli@ksbstatesim.org
+          role: writer
+        - emailAddress: thaddeustuck@gmail.com
+          role: writer
+        - emailAddress: MathewsReece@gmail.com
+          role: writer
+        - emailAddress: jacobthomasstark@gmail.com
+          role: writer
+        - emailAddress: ring.scott1@gmail.com
+          role: writer
+        - emailAddress: keeprunning218@gmail.com
+          role: owner
+        sub_folders: []
+      - name: Shelton Share
+        permissions:
+        - emailAddress: it@ksbstatesim.org
+          role: writer
+        - emailAddress: john.shively@ksbstatesim.org
+          role: writer
+        - emailAddress: shelton@ksbstatesim.org
+          role: writer
+        - emailAddress: pumposh@live.com
+          role: writer
+        - emailAddress: powell@ksbstatesim.org
+          role: writer
+        - emailAddress: DroseOutdoors@gmail.com
+          role: writer
+        - emailAddress: 8.tpledger@kscholars.org
+          role: writer
+        - emailAddress: JpShively1@gmail.com
+          role: writer
+        - emailAddress: thaddeustuck@gmail.com
+          role: writer
+        - emailAddress: MathewsReece@gmail.com
+          role: writer
+        - emailAddress: jacobthomasstark@gmail.com
+          role: writer
+        - emailAddress: ring.scott1@gmail.com
+          role: writer
+        - emailAddress: keeprunning218@gmail.com
+          role: owner
+        sub_folders: []
+      - name: Schrag Share
+        permissions:
+        - emailAddress: it@ksbstatesim.org
+          role: writer
+        - emailAddress: john.shively@ksbstatesim.org
+          role: writer
+        - emailAddress: schrag@ksbstatesim.org
+          role: writer
+        - emailAddress: pumposh@live.com
+          role: writer
+        - emailAddress: powell@ksbstatesim.org
+          role: writer
+        - emailAddress: DroseOutdoors@gmail.com
+          role: writer
+        - emailAddress: 8.tpledger@kscholars.org
+          role: writer
+        - emailAddress: JpShively1@gmail.com
+          role: writer
+        - emailAddress: thaddeustuck@gmail.com
+          role: writer
+        - emailAddress: MathewsReece@gmail.com
+          role: writer
+        - emailAddress: jacobthomasstark@gmail.com
+          role: writer
+        - emailAddress: ring.scott1@gmail.com
+          role: writer
+        - emailAddress: keeprunning218@gmail.com
+          role: owner
+        sub_folders: []
+    - name: Pershing Share
+      permissions:
+      - emailAddress: it@ksbstatesim.org
+        role: writer
+      - emailAddress: john.shively@ksbstatesim.org
+        role: writer
+      - emailAddress: pumposh@live.com
+        role: writer
+      - emailAddress: DroseOutdoors@gmail.com
+        role: writer
+      - emailAddress: jacobthomasstark@gmail.com
+        role: writer
+      - emailAddress: 8.tpledger@kscholars.org
+        role: writer
+      - emailAddress: JpShively1@gmail.com
+        role: writer
+      - emailAddress: pershing@ksbstatesim.org
+        role: writer
+      - emailAddress: thaddeustuck@gmail.com
+        role: writer
+      - emailAddress: ring.scott1@gmail.com
+        role: writer
+      - emailAddress: MathewsReece@gmail.com
+        role: writer
+      - emailAddress: keeprunning218@gmail.com
+        role: owner
+      sub_folders:
+      - name: Schmitt Share
+        permissions:
+        - emailAddress: it@ksbstatesim.org
+          role: writer
+        - emailAddress: john.shively@ksbstatesim.org
+          role: writer
+        - emailAddress: pumposh@live.com
+          role: writer
+        - emailAddress: DroseOutdoors@gmail.com
+          role: writer
+        - emailAddress: 8.tpledger@kscholars.org
+          role: writer
+        - emailAddress: JpShively1@gmail.com
+          role: writer
+        - emailAddress: pershing@ksbstatesim.org
+          role: writer
+        - emailAddress: thaddeustuck@gmail.com
+          role: writer
+        - emailAddress: MathewsReece@gmail.com
+          role: writer
+        - emailAddress: schmitt@ksbstatesim.org
+          role: writer
+        - emailAddress: jacobthomasstark@gmail.com
+          role: writer
+        - emailAddress: ring.scott1@gmail.com
+          role: writer
+        - emailAddress: keeprunning218@gmail.com
+          role: owner
+        sub_folders: []
+      - name: Raymond Share
+        permissions:
+        - emailAddress: it@ksbstatesim.org
+          role: writer
+        - emailAddress: john.shively@ksbstatesim.org
+          role: writer
+        - emailAddress: pumposh@live.com
+          role: writer
+        - emailAddress: DroseOutdoors@gmail.com
+          role: writer
+        - emailAddress: raymond@ksbstatesim.org
+          role: writer
+        - emailAddress: 8.tpledger@kscholars.org
+          role: writer
+        - emailAddress: JpShively1@gmail.com
+          role: writer
+        - emailAddress: pershing@ksbstatesim.org
+          role: writer
+        - emailAddress: thaddeustuck@gmail.com
+          role: writer
+        - emailAddress: MathewsReece@gmail.com
+          role: writer
+        - emailAddress: jacobthomasstark@gmail.com
+          role: writer
+        - emailAddress: ring.scott1@gmail.com
+          role: writer
+        - emailAddress: keeprunning218@gmail.com
+          role: owner
+        sub_folders: []
+      - name: Perrill Share
+        permissions:
+        - emailAddress: it@ksbstatesim.org
+          role: writer
+        - emailAddress: john.shively@ksbstatesim.org
+          role: writer
+        - emailAddress: pumposh@live.com
+          role: writer
+        - emailAddress: DroseOutdoors@gmail.com
+          role: writer
+        - emailAddress: 8.tpledger@kscholars.org
+          role: writer
+        - emailAddress: JpShively1@gmail.com
+          role: writer
+        - emailAddress: pershing@ksbstatesim.org
+          role: writer
+        - emailAddress: thaddeustuck@gmail.com
+          role: writer
+        - emailAddress: MathewsReece@gmail.com
+          role: writer
+        - emailAddress: perrill@ksbstatesim.org
+          role: writer
+        - emailAddress: jacobthomasstark@gmail.com
+          role: writer
+        - emailAddress: ring.scott1@gmail.com
+          role: writer
+        - emailAddress: keeprunning218@gmail.com
+          role: owner
+        sub_folders: []
+    - name: Patton Share
+      permissions:
+      - emailAddress: it@ksbstatesim.org
+        role: writer
+      - emailAddress: john.shively@ksbstatesim.org
+        role: writer
+      - emailAddress: pumposh@live.com
+        role: writer
+      - emailAddress: DroseOutdoors@gmail.com
+        role: writer
+      - emailAddress: patton@ksbstatesim.org
+        role: writer
+      - emailAddress: jacobthomasstark@gmail.com
+        role: writer
+      - emailAddress: 8.tpledger@kscholars.org
+        role: writer
+      - emailAddress: JpShively1@gmail.com
+        role: writer
+      - emailAddress: thaddeustuck@gmail.com
+        role: writer
+      - emailAddress: ring.scott1@gmail.com
+        role: writer
+      - emailAddress: MathewsReece@gmail.com
+        role: writer
+      - emailAddress: keeprunning218@gmail.com
+        role: owner
+      sub_folders:
+      - name: OLeary Share
+        permissions:
+        - emailAddress: it@ksbstatesim.org
+          role: writer
+        - emailAddress: john.shively@ksbstatesim.org
+          role: writer
+        - emailAddress: o'leary@ksbstatesim.org
+          role: writer
+        - emailAddress: pumposh@live.com
+          role: writer
+        - emailAddress: DroseOutdoors@gmail.com
+          role: writer
+        - emailAddress: patton@ksbstatesim.org
+          role: writer
+        - emailAddress: 8.tpledger@kscholars.org
+          role: writer
+        - emailAddress: JpShively1@gmail.com
+          role: writer
+        - emailAddress: thaddeustuck@gmail.com
+          role: writer
+        - emailAddress: MathewsReece@gmail.com
+          role: writer
+        - emailAddress: jacobthomasstark@gmail.com
+          role: writer
+        - emailAddress: ring.scott1@gmail.com
+          role: writer
+        - emailAddress: keeprunning218@gmail.com
+          role: owner
+        sub_folders: []
+      - name: Newman Share
+        permissions:
+        - emailAddress: it@ksbstatesim.org
+          role: writer
+        - emailAddress: john.shively@ksbstatesim.org
+          role: writer
+        - emailAddress: newman@ksbstatesim.org
+          role: writer
+        - emailAddress: pumposh@live.com
+          role: writer
+        - emailAddress: DroseOutdoors@gmail.com
+          role: writer
+        - emailAddress: patton@ksbstatesim.org
+          role: writer
+        - emailAddress: 8.tpledger@kscholars.org
+          role: writer
+        - emailAddress: JpShively1@gmail.com
+          role: writer
+        - emailAddress: thaddeustuck@gmail.com
+          role: writer
+        - emailAddress: MathewsReece@gmail.com
+          role: writer
+        - emailAddress: jacobthomasstark@gmail.com
+          role: writer
+        - emailAddress: ring.scott1@gmail.com
+          role: writer
+        - emailAddress: keeprunning218@gmail.com
+          role: owner
+        sub_folders: []
+      - name: McCoy Share
+        permissions:
+        - emailAddress: it@ksbstatesim.org
+          role: writer
+        - emailAddress: john.shively@ksbstatesim.org
+          role: writer
+        - emailAddress: pumposh@live.com
+          role: writer
+        - emailAddress: DroseOutdoors@gmail.com
+          role: writer
+        - emailAddress: patton@ksbstatesim.org
+          role: writer
+        - emailAddress: 8.tpledger@kscholars.org
+          role: writer
+        - emailAddress: JpShively1@gmail.com
+          role: writer
+        - emailAddress: thaddeustuck@gmail.com
+          role: writer
+        - emailAddress: MathewsReece@gmail.com
+          role: writer
+        - emailAddress: mccoy@ksbstatesim.org
+          role: writer
+        - emailAddress: jacobthomasstark@gmail.com
+          role: writer
+        - emailAddress: ring.scott1@gmail.com
+          role: writer
+        - emailAddress: keeprunning218@gmail.com
+          role: owner
+        sub_folders: []
+    - name: Marshall Share
+      permissions:
+      - emailAddress: it@ksbstatesim.org
+        role: writer
+      - emailAddress: john.shively@ksbstatesim.org
+        role: writer
+      - emailAddress: marshall@ksbstatesim.org
+        role: writer
+      - emailAddress: pumposh@live.com
+        role: writer
+      - emailAddress: DroseOutdoors@gmail.com
+        role: writer
+      - emailAddress: jacobthomasstark@gmail.com
+        role: writer
+      - emailAddress: 8.tpledger@kscholars.org
+        role: writer
+      - emailAddress: JpShively1@gmail.com
+        role: writer
+      - emailAddress: thaddeustuck@gmail.com
+        role: writer
+      - emailAddress: ring.scott1@gmail.com
+        role: writer
+      - emailAddress: MathewsReece@gmail.com
+        role: writer
+      - emailAddress: keeprunning218@gmail.com
+        role: owner
+      sub_folders:
+      - name: Mantey Share
+        permissions:
+        - emailAddress: it@ksbstatesim.org
+          role: writer
+        - emailAddress: john.shively@ksbstatesim.org
+          role: writer
+        - emailAddress: mantey@ksbstatesim.org
+          role: writer
+        - emailAddress: pumposh@live.com
+          role: writer
+        - emailAddress: DroseOutdoors@gmail.com
+          role: writer
+        - emailAddress: 8.tpledger@kscholars.org
+          role: writer
+        - emailAddress: JpShively1@gmail.com
+          role: writer
+        - emailAddress: thaddeustuck@gmail.com
+          role: writer
+        - emailAddress: MathewsReece@gmail.com
+          role: writer
+        - emailAddress: marshall@ksbstatesim.org
+          role: writer
+        - emailAddress: jacobthomasstark@gmail.com
+          role: writer
+        - emailAddress: ring.scott1@gmail.com
+          role: writer
+        - emailAddress: keeprunning218@gmail.com
+          role: owner
+        sub_folders: []
+      - name: Lane Share
+        permissions:
+        - emailAddress: lane@ksbstatesim.org
+          role: writer
+        - emailAddress: it@ksbstatesim.org
+          role: writer
+        - emailAddress: john.shively@ksbstatesim.org
+          role: writer
+        - emailAddress: pumposh@live.com
+          role: writer
+        - emailAddress: DroseOutdoors@gmail.com
+          role: writer
+        - emailAddress: 8.tpledger@kscholars.org
+          role: writer
+        - emailAddress: JpShively1@gmail.com
+          role: writer
+        - emailAddress: thaddeustuck@gmail.com
+          role: writer
+        - emailAddress: MathewsReece@gmail.com
+          role: writer
+        - emailAddress: marshall@ksbstatesim.org
+          role: writer
+        - emailAddress: jacobthomasstark@gmail.com
+          role: writer
+        - emailAddress: ring.scott1@gmail.com
+          role: writer
+        - emailAddress: keeprunning218@gmail.com
+          role: owner
+        sub_folders: []
+      - name: Kyle Share
+        permissions:
+        - emailAddress: it@ksbstatesim.org
+          role: writer
+        - emailAddress: john.shively@ksbstatesim.org
+          role: writer
+        - emailAddress: pumposh@live.com
+          role: writer
+        - emailAddress: DroseOutdoors@gmail.com
+          role: writer
+        - emailAddress: 8.tpledger@kscholars.org
+          role: writer
+        - emailAddress: JpShively1@gmail.com
+          role: writer
+        - emailAddress: thaddeustuck@gmail.com
+          role: writer
+        - emailAddress: MathewsReece@gmail.com
+          role: writer
+        - emailAddress: marshall@ksbstatesim.org
+          role: writer
+        - emailAddress: jacobthomasstark@gmail.com
+          role: writer
+        - emailAddress: kyle@ksbstatesim.org
+          role: writer
+        - emailAddress: ring.scott1@gmail.com
+          role: writer
+        - emailAddress: keeprunning218@gmail.com
+          role: owner
+        sub_folders: []
+    - name: MacArthur Share
+      permissions:
+      - emailAddress: it@ksbstatesim.org
+        role: writer
+      - emailAddress: john.shively@ksbstatesim.org
+        role: writer
+      - emailAddress: pumposh@live.com
+        role: writer
+      - emailAddress: DroseOutdoors@gmail.com
+        role: writer
+      - emailAddress: jacobthomasstark@gmail.com
+        role: writer
+      - emailAddress: 8.tpledger@kscholars.org
+        role: writer
+      - emailAddress: JpShively1@gmail.com
+        role: writer
+      - emailAddress: thaddeustuck@gmail.com
+        role: writer
+      - emailAddress: ring.scott1@gmail.com
+        role: writer
+      - emailAddress: MathewsReece@gmail.com
+        role: writer
+      - emailAddress: macarthur@ksbstatesim.org
+        role: writer
+      - emailAddress: keeprunning218@gmail.com
+        role: owner
+      sub_folders:
+      - name: Klassen Share
+        permissions:
+        - emailAddress: klassen@ksbstatesim.org
+          role: writer
+        - emailAddress: it@ksbstatesim.org
+          role: writer
+        - emailAddress: john.shively@ksbstatesim.org
+          role: writer
+        - emailAddress: pumposh@live.com
+          role: writer
+        - emailAddress: DroseOutdoors@gmail.com
+          role: writer
+        - emailAddress: 8.tpledger@kscholars.org
+          role: writer
+        - emailAddress: JpShively1@gmail.com
+          role: writer
+        - emailAddress: thaddeustuck@gmail.com
+          role: writer
+        - emailAddress: MathewsReece@gmail.com
+          role: writer
+        - emailAddress: jacobthomasstark@gmail.com
+          role: writer
+        - emailAddress: ring.scott1@gmail.com
+          role: writer
+        - emailAddress: macarthur@ksbstatesim.org
+          role: writer
+        - emailAddress: keeprunning218@gmail.com
+          role: owner
+        sub_folders: []
+      - name: Johnson Share
+        permissions:
+        - emailAddress: it@ksbstatesim.org
+          role: writer
+        - emailAddress: john.shively@ksbstatesim.org
+          role: writer
+        - emailAddress: pumposh@live.com
+          role: writer
+        - emailAddress: DroseOutdoors@gmail.com
+          role: writer
+        - emailAddress: johnson@ksbstatesim.org
+          role: writer
+        - emailAddress: 8.tpledger@kscholars.org
+          role: writer
+        - emailAddress: JpShively1@gmail.com
+          role: writer
+        - emailAddress: thaddeustuck@gmail.com
+          role: writer
+        - emailAddress: MathewsReece@gmail.com
+          role: writer
+        - emailAddress: jacobthomasstark@gmail.com
+          role: writer
+        - emailAddress: ring.scott1@gmail.com
+          role: writer
+        - emailAddress: macarthur@ksbstatesim.org
+          role: writer
+        - emailAddress: keeprunning218@gmail.com
+          role: owner
+        sub_folders: []
+      - name: Janssen Share
+        permissions:
+        - emailAddress: it@ksbstatesim.org
+          role: writer
+        - emailAddress: john.shively@ksbstatesim.org
+          role: writer
+        - emailAddress: pumposh@live.com
+          role: writer
+        - emailAddress: DroseOutdoors@gmail.com
+          role: writer
+        - emailAddress: 8.tpledger@kscholars.org
+          role: writer
+        - emailAddress: JpShively1@gmail.com
+          role: writer
+        - emailAddress: thaddeustuck@gmail.com
+          role: writer
+        - emailAddress: MathewsReece@gmail.com
+          role: writer
+        - emailAddress: jacobthomasstark@gmail.com
+          role: writer
+        - emailAddress: janssen@ksbstatesim.org
+          role: writer
+        - emailAddress: ring.scott1@gmail.com
+          role: writer
+        - emailAddress: macarthur@ksbstatesim.org
+          role: writer
+        - emailAddress: keeprunning218@gmail.com
+          role: owner
+        sub_folders: []
+    - name: King Share
+      permissions:
+      - emailAddress: it@ksbstatesim.org
+        role: writer
+      - emailAddress: john.shively@ksbstatesim.org
+        role: writer
+      - emailAddress: pumposh@live.com
+        role: writer
+      - emailAddress: DroseOutdoors@gmail.com
+        role: writer
+      - emailAddress: jacobthomasstark@gmail.com
+        role: writer
+      - emailAddress: 8.tpledger@kscholars.org
+        role: writer
+      - emailAddress: king@ksbstatesim.org
+        role: writer
+      - emailAddress: JpShively1@gmail.com
+        role: writer
+      - emailAddress: thaddeustuck@gmail.com
+        role: writer
+      - emailAddress: ring.scott1@gmail.com
+        role: writer
+      - emailAddress: MathewsReece@gmail.com
+        role: writer
+      - emailAddress: keeprunning218@gmail.com
+        role: owner
+      sub_folders:
+      - name: Icenogle Share
+        permissions:
+        - emailAddress: it@ksbstatesim.org
+          role: writer
+        - emailAddress: john.shively@ksbstatesim.org
+          role: writer
+        - emailAddress: icenogle@ksbstatesim.org
+          role: writer
+        - emailAddress: pumposh@live.com
+          role: writer
+        - emailAddress: DroseOutdoors@gmail.com
+          role: writer
+        - emailAddress: 8.tpledger@kscholars.org
+          role: writer
+        - emailAddress: king@ksbstatesim.org
+          role: writer
+        - emailAddress: JpShively1@gmail.com
+          role: writer
+        - emailAddress: thaddeustuck@gmail.com
+          role: writer
+        - emailAddress: MathewsReece@gmail.com
+          role: writer
+        - emailAddress: jacobthomasstark@gmail.com
+          role: writer
+        - emailAddress: ring.scott1@gmail.com
+          role: writer
+        - emailAddress: keeprunning218@gmail.com
+          role: owner
+        sub_folders: []
+      - name: Hiatt Share
+        permissions:
+        - emailAddress: it@ksbstatesim.org
+          role: writer
+        - emailAddress: john.shively@ksbstatesim.org
+          role: writer
+        - emailAddress: pumposh@live.com
+          role: writer
+        - emailAddress: DroseOutdoors@gmail.com
+          role: writer
+        - emailAddress: 8.tpledger@kscholars.org
+          role: writer
+        - emailAddress: king@ksbstatesim.org
+          role: writer
+        - emailAddress: hiatt@ksbstatesim.org
+          role: writer
+        - emailAddress: JpShively1@gmail.com
+          role: writer
+        - emailAddress: thaddeustuck@gmail.com
+          role: writer
+        - emailAddress: MathewsReece@gmail.com
+          role: writer
+        - emailAddress: jacobthomasstark@gmail.com
+          role: writer
+        - emailAddress: ring.scott1@gmail.com
+          role: writer
+        - emailAddress: keeprunning218@gmail.com
+          role: owner
+        sub_folders: []
+      - name: Hasler Share
+        permissions:
+        - emailAddress: it@ksbstatesim.org
+          role: writer
+        - emailAddress: john.shively@ksbstatesim.org
+          role: writer
+        - emailAddress: pumposh@live.com
+          role: writer
+        - emailAddress: DroseOutdoors@gmail.com
+          role: writer
+        - emailAddress: hasler@ksbstatesim.org
+          role: writer
+        - emailAddress: 8.tpledger@kscholars.org
+          role: writer
+        - emailAddress: king@ksbstatesim.org
+          role: writer
+        - emailAddress: JpShively1@gmail.com
+          role: writer
+        - emailAddress: thaddeustuck@gmail.com
+          role: writer
+        - emailAddress: MathewsReece@gmail.com
+          role: writer
+        - emailAddress: jacobthomasstark@gmail.com
+          role: writer
+        - emailAddress: ring.scott1@gmail.com
+          role: writer
+        - emailAddress: keeprunning218@gmail.com
+          role: owner
+        sub_folders: []
+    - name: Kennedy Share
+      permissions:
+      - emailAddress: it@ksbstatesim.org
+        role: writer
+      - emailAddress: john.shively@ksbstatesim.org
+        role: writer
+      - emailAddress: kennedy@ksbstatesim.org
+        role: writer
+      - emailAddress: pumposh@live.com
+        role: writer
+      - emailAddress: DroseOutdoors@gmail.com
+        role: writer
+      - emailAddress: jacobthomasstark@gmail.com
+        role: writer
+      - emailAddress: 8.tpledger@kscholars.org
+        role: writer
+      - emailAddress: JpShively1@gmail.com
+        role: writer
+      - emailAddress: thaddeustuck@gmail.com
+        role: writer
+      - emailAddress: ring.scott1@gmail.com
+        role: writer
+      - emailAddress: MathewsReece@gmail.com
+        role: writer
+      - emailAddress: keeprunning218@gmail.com
+        role: owner
+      sub_folders:
+      - name: Haney Share
+        permissions:
+        - emailAddress: it@ksbstatesim.org
+          role: writer
+        - emailAddress: john.shively@ksbstatesim.org
+          role: writer
+        - emailAddress: kennedy@ksbstatesim.org
+          role: writer
+        - emailAddress: pumposh@live.com
+          role: writer
+        - emailAddress: DroseOutdoors@gmail.com
+          role: writer
+        - emailAddress: 8.tpledger@kscholars.org
+          role: writer
+        - emailAddress: JpShively1@gmail.com
+          role: writer
+        - emailAddress: thaddeustuck@gmail.com
+          role: writer
+        - emailAddress: MathewsReece@gmail.com
+          role: writer
+        - emailAddress: haney@ksbstatesim.org
+          role: writer
+        - emailAddress: jacobthomasstark@gmail.com
+          role: writer
+        - emailAddress: ring.scott1@gmail.com
+          role: writer
+        - emailAddress: keeprunning218@gmail.com
+          role: owner
+        sub_folders: []
+      - name: Gardner Share
+        permissions:
+        - emailAddress: it@ksbstatesim.org
+          role: writer
+        - emailAddress: john.shively@ksbstatesim.org
+          role: writer
+        - emailAddress: kennedy@ksbstatesim.org
+          role: writer
+        - emailAddress: pumposh@live.com
+          role: writer
+        - emailAddress: DroseOutdoors@gmail.com
+          role: writer
+        - emailAddress: 8.tpledger@kscholars.org
+          role: writer
+        - emailAddress: JpShively1@gmail.com
+          role: writer
+        - emailAddress: gardner@ksbstatesim.org
+          role: writer
+        - emailAddress: thaddeustuck@gmail.com
+          role: writer
+        - emailAddress: MathewsReece@gmail.com
+          role: writer
+        - emailAddress: jacobthomasstark@gmail.com
+          role: writer
+        - emailAddress: ring.scott1@gmail.com
+          role: writer
+        - emailAddress: keeprunning218@gmail.com
+          role: owner
+        sub_folders: []
+      - name: Finley Share
+        permissions:
+        - emailAddress: it@ksbstatesim.org
+          role: writer
+        - emailAddress: john.shively@ksbstatesim.org
+          role: writer
+        - emailAddress: kennedy@ksbstatesim.org
+          role: writer
+        - emailAddress: pumposh@live.com
+          role: writer
+        - emailAddress: DroseOutdoors@gmail.com
+          role: writer
+        - emailAddress: 8.tpledger@kscholars.org
+          role: writer
+        - emailAddress: JpShively1@gmail.com
+          role: writer
+        - emailAddress: thaddeustuck@gmail.com
+          role: writer
+        - emailAddress: MathewsReece@gmail.com
+          role: writer
+        - emailAddress: finley@ksbstatesim.org
+          role: writer
+        - emailAddress: jacobthomasstark@gmail.com
+          role: writer
+        - emailAddress: ring.scott1@gmail.com
+          role: writer
+        - emailAddress: keeprunning218@gmail.com
+          role: owner
+        sub_folders: []
+    - name: Eisenhower Share
+      permissions:
+      - emailAddress: it@ksbstatesim.org
+        role: writer
+      - emailAddress: john.shively@ksbstatesim.org
+        role: writer
+      - emailAddress: pumposh@live.com
+        role: writer
+      - emailAddress: eisenhower@ksbstatesim.org
+        role: writer
+      - emailAddress: DroseOutdoors@gmail.com
+        role: writer
+      - emailAddress: jacobthomasstark@gmail.com
+        role: writer
+      - emailAddress: 8.tpledger@kscholars.org
+        role: writer
+      - emailAddress: JpShively1@gmail.com
+        role: writer
+      - emailAddress: thaddeustuck@gmail.com
+        role: writer
+      - emailAddress: ring.scott1@gmail.com
+        role: writer
+      - emailAddress: MathewsReece@gmail.com
+        role: writer
+      - emailAddress: keeprunning218@gmail.com
+        role: owner
+      sub_folders:
+      - name: Crum Share
+        permissions:
+        - emailAddress: it@ksbstatesim.org
+          role: writer
+        - emailAddress: john.shively@ksbstatesim.org
+          role: writer
+        - emailAddress: pumposh@live.com
+          role: writer
+        - emailAddress: eisenhower@ksbstatesim.org
+          role: writer
+        - emailAddress: DroseOutdoors@gmail.com
+          role: writer
+        - emailAddress: 8.tpledger@kscholars.org
+          role: writer
+        - emailAddress: JpShively1@gmail.com
+          role: writer
+        - emailAddress: thaddeustuck@gmail.com
+          role: writer
+        - emailAddress: MathewsReece@gmail.com
+          role: writer
+        - emailAddress: crum@ksbstatesim.org
+          role: writer
+        - emailAddress: jacobthomasstark@gmail.com
+          role: writer
+        - emailAddress: ring.scott1@gmail.com
+          role: writer
+        - emailAddress: keeprunning218@gmail.com
+          role: owner
+        sub_folders: []
+      - name: Chastain Share
+        permissions:
+        - emailAddress: it@ksbstatesim.org
+          role: writer
+        - emailAddress: john.shively@ksbstatesim.org
+          role: writer
+        - emailAddress: pumposh@live.com
+          role: writer
+        - emailAddress: eisenhower@ksbstatesim.org
+          role: writer
+        - emailAddress: DroseOutdoors@gmail.com
+          role: writer
+        - emailAddress: 8.tpledger@kscholars.org
+          role: writer
+        - emailAddress: JpShively1@gmail.com
+          role: writer
+        - emailAddress: thaddeustuck@gmail.com
+          role: writer
+        - emailAddress: MathewsReece@gmail.com
+          role: writer
+        - emailAddress: chastain@ksbstatesim.org
+          role: writer
+        - emailAddress: jacobthomasstark@gmail.com
+          role: writer
+        - emailAddress: ring.scott1@gmail.com
+          role: writer
+        - emailAddress: keeprunning218@gmail.com
+          role: owner
+        sub_folders: []
+      - name: Bramlage Share
+        permissions:
+        - emailAddress: it@ksbstatesim.org
+          role: writer
+        - emailAddress: john.shively@ksbstatesim.org
+          role: writer
+        - emailAddress: pumposh@live.com
+          role: writer
+        - emailAddress: eisenhower@ksbstatesim.org
+          role: writer
+        - emailAddress: DroseOutdoors@gmail.com
+          role: writer
+        - emailAddress: 8.tpledger@kscholars.org
+          role: writer
+        - emailAddress: JpShively1@gmail.com
+          role: writer
+        - emailAddress: thaddeustuck@gmail.com
+          role: writer
+        - emailAddress: bramlage@ksbstatesim.org
+          role: writer
+        - emailAddress: MathewsReece@gmail.com
+          role: writer
+        - emailAddress: jacobthomasstark@gmail.com
+          role: writer
+        - emailAddress: ring.scott1@gmail.com
+          role: writer
+        - emailAddress: keeprunning218@gmail.com
+          role: owner
+        sub_folders: []
+    - name: Bradley Share
+      permissions:
+      - emailAddress: it@ksbstatesim.org
+        role: writer
+      - emailAddress: john.shively@ksbstatesim.org
+        role: writer
+      - emailAddress: pumposh@live.com
+        role: writer
+      - emailAddress: DroseOutdoors@gmail.com
+        role: writer
+      - emailAddress: jacobthomasstark@gmail.com
+        role: writer
+      - emailAddress: 8.tpledger@kscholars.org
+        role: writer
+      - emailAddress: JpShively1@gmail.com
+        role: writer
+      - emailAddress: bradley@ksbstatesim.org
+        role: writer
+      - emailAddress: thaddeustuck@gmail.com
+        role: writer
+      - emailAddress: ring.scott1@gmail.com
+        role: writer
+      - emailAddress: MathewsReece@gmail.com
+        role: writer
+      - emailAddress: keeprunning218@gmail.com
+        role: owner
+      sub_folders:
+      - name: Bluemke Share
+        permissions:
+        - emailAddress: it@ksbstatesim.org
+          role: writer
+        - emailAddress: john.shively@ksbstatesim.org
+          role: writer
+        - emailAddress: pumposh@live.com
+          role: writer
+        - emailAddress: DroseOutdoors@gmail.com
+          role: writer
+        - emailAddress: 8.tpledger@kscholars.org
+          role: writer
+        - emailAddress: JpShively1@gmail.com
+          role: writer
+        - emailAddress: thaddeustuck@gmail.com
+          role: writer
+        - emailAddress: MathewsReece@gmail.com
+          role: writer
+        - emailAddress: bluemke@ksbstatesim.org
+          role: writer
+        - emailAddress: jacobthomasstark@gmail.com
+          role: writer
+        - emailAddress: bradley@ksbstatesim.org
+          role: writer
+        - emailAddress: ring.scott1@gmail.com
+          role: writer
+        - emailAddress: keeprunning218@gmail.com
+          role: owner
+        sub_folders: []
+      - name: Bley Share
+        permissions:
+        - emailAddress: it@ksbstatesim.org
+          role: writer
+        - emailAddress: john.shively@ksbstatesim.org
+          role: writer
+        - emailAddress: pumposh@live.com
+          role: writer
+        - emailAddress: DroseOutdoors@gmail.com
+          role: writer
+        - emailAddress: 8.tpledger@kscholars.org
+          role: writer
+        - emailAddress: JpShively1@gmail.com
+          role: writer
+        - emailAddress: thaddeustuck@gmail.com
+          role: writer
+        - emailAddress: MathewsReece@gmail.com
+          role: writer
+        - emailAddress: bley@ksbstatesim.org
+          role: writer
+        - emailAddress: jacobthomasstark@gmail.com
+          role: writer
+        - emailAddress: bradley@ksbstatesim.org
+          role: writer
+        - emailAddress: ring.scott1@gmail.com
+          role: writer
+        - emailAddress: keeprunning218@gmail.com
+          role: owner
+        sub_folders: []
+      - name: Aylward Share
+        permissions:
+        - emailAddress: aylward@ksbstatesim.org
+          role: writer
+        - emailAddress: it@ksbstatesim.org
+          role: writer
+        - emailAddress: john.shively@ksbstatesim.org
+          role: writer
+        - emailAddress: pumposh@live.com
+          role: writer
+        - emailAddress: DroseOutdoors@gmail.com
+          role: writer
+        - emailAddress: 8.tpledger@kscholars.org
+          role: writer
+        - emailAddress: JpShively1@gmail.com
+          role: writer
+        - emailAddress: thaddeustuck@gmail.com
+          role: writer
+        - emailAddress: MathewsReece@gmail.com
+          role: writer
+        - emailAddress: jacobthomasstark@gmail.com
+          role: writer
+        - emailAddress: bradley@ksbstatesim.org
+          role: writer
+        - emailAddress: ring.scott1@gmail.com
+          role: writer
+        - emailAddress: keeprunning218@gmail.com
+          role: owner
+        sub_folders: []
+      - name: Bramlage Share
+        permissions:
+        - emailAddress: it@ksbstatesim.org
+          role: writer
+        - emailAddress: john.shively@ksbstatesim.org
+          role: writer
+        - emailAddress: pumposh@live.com
+          role: writer
+        - emailAddress: DroseOutdoors@gmail.com
+          role: writer
+        - emailAddress: jacobthomasstark@gmail.com
+          role: writer
+        - emailAddress: 8.tpledger@kscholars.org
+          role: writer
+        - emailAddress: keeprunning218@gmail.com
+          role: writer
+        - emailAddress: JpShively1@gmail.com
+          role: writer
+        - emailAddress: bradley@ksbstatesim.org
+          role: writer
+        - emailAddress: ring.scott1@gmail.com
+          role: writer
+        - emailAddress: MathewsReece@gmail.com
+          role: writer
+        - emailAddress: thaddeustuck@gmail.com
+          role: owner
+        sub_folders: []
+  - name: Departments Share
+    permissions:
+    - emailAddress: it@ksbstatesim.org
+      role: writer
+    - emailAddress: john.shively@ksbstatesim.org
+      role: writer
+    - emailAddress: pumposh@live.com
+      role: writer
+    - emailAddress: DroseOutdoors@gmail.com
+      role: writer
+    - emailAddress: jacobthomasstark@gmail.com
+      role: writer
+    - emailAddress: 8.tpledger@kscholars.org
+      role: writer
+    - emailAddress: keeprunning218@gmail.com
+      role: writer
+    - emailAddress: JpShively1@gmail.com
+      role: writer
+    - emailAddress: ring.scott1@gmail.com
+      role: writer
+    - emailAddress: MathewsReece@gmail.com
+      role: writer
+    - emailAddress: thaddeustuck@gmail.com
+      role: owner
+    sub_folders:
+    - name: Dept. of Humanities Share
+      permissions:
+      - emailAddress: it@ksbstatesim.org
+        role: writer
+      - emailAddress: john.shively@ksbstatesim.org
+        role: writer
+      - emailAddress: pumposh@live.com
+        role: writer
+      - emailAddress: DroseOutdoors@gmail.com
+        role: writer
+      - emailAddress: jacobthomasstark@gmail.com
+        role: writer
+      - emailAddress: 8.tpledger@kscholars.org
+        role: writer
+      - emailAddress: keeprunning218@gmail.com
+        role: writer
+      - emailAddress: JpShively1@gmail.com
+        role: writer
+      - emailAddress: ring.scott1@gmail.com
+        role: writer
+      - emailAddress: MathewsReece@gmail.com
+        role: writer
+      - emailAddress: thaddeustuck@gmail.com
+        role: owner
+      sub_folders: []
+    - name: Dept. of Natural Resources Share
+      permissions:
+      - emailAddress: it@ksbstatesim.org
+        role: writer
+      - emailAddress: john.shively@ksbstatesim.org
+        role: writer
+      - emailAddress: pumposh@live.com
+        role: writer
+      - emailAddress: DroseOutdoors@gmail.com
+        role: writer
+      - emailAddress: jacobthomasstark@gmail.com
+        role: writer
+      - emailAddress: 8.tpledger@kscholars.org
+        role: writer
+      - emailAddress: keeprunning218@gmail.com
+        role: writer
+      - emailAddress: JpShively1@gmail.com
+        role: writer
+      - emailAddress: ring.scott1@gmail.com
+        role: writer
+      - emailAddress: MathewsReece@gmail.com
+        role: writer
+      - emailAddress: thaddeustuck@gmail.com
+        role: owner
+      sub_folders: []
+    - name: Dept. of Economy Share
+      permissions:
+      - emailAddress: it@ksbstatesim.org
+        role: writer
+      - emailAddress: john.shively@ksbstatesim.org
+        role: writer
+      - emailAddress: pumposh@live.com
+        role: writer
+      - emailAddress: DroseOutdoors@gmail.com
+        role: writer
+      - emailAddress: jacobthomasstark@gmail.com
+        role: writer
+      - emailAddress: 8.tpledger@kscholars.org
+        role: writer
+      - emailAddress: keeprunning218@gmail.com
+        role: writer
+      - emailAddress: JpShively1@gmail.com
+        role: writer
+      - emailAddress: ring.scott1@gmail.com
+        role: writer
+      - emailAddress: MathewsReece@gmail.com
+        role: writer
+      - emailAddress: thaddeustuck@gmail.com
+        role: owner
+      sub_folders: []
