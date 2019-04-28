@@ -122,6 +122,8 @@ def get_root_names():
     """Get a list of root names from the roots.txt file."""
 
     # TODO: Test root.txt = "/" for using actual drive root as root
+    # TODO: Test multiple roots
+    # TODO: Move file names to globals
 
     def is_not_comment(line):
         """Check if the given line is a comment."""
