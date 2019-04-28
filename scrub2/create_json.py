@@ -1,8 +1,10 @@
 """Create a json to store tree structure and sharing permissions for the given roots."""
 
+import json
+
 from setup_drive_api import get_service
 
-from anytree import Node, RenderTree
+from anytree import Node, RenderTree, LevelOrderIter
 
 SCOPES = ["https://www.googleapis.com/auth/drive.metadata.readonly"]
 FOLDER_TYPE = "application/vnd.google-apps.folder"
@@ -10,11 +12,11 @@ QUERY_ADDENDUM = f"mimeType = '{FOLDER_TYPE}' and not trashed"
 FIELDS = "nextPageToken, files(id, name, permissions, kind, mimeType, parents, trashed)"
 
 
-def get_root_id(service, root_name):
-    """Get the ID for the root folder."""
+def get_root_folder(service, root_name):
+    """Get folder object for the root folder."""
 
-    def get_folder_id(service, folder_name, parent_id):
-        """Get the ID of any given folder."""
+    def get_folder(service, folder_name, parent_id):
+        """Get the folder object based on name and parent."""
         results = (
             service.files()
             .list(
@@ -30,7 +32,7 @@ def get_root_id(service, root_name):
         )
         if not results["files"]:
             raise FileNotFoundError(folder_name)
-        return results["files"][0]["id"]
+        return results["files"][0]
 
     # Get folders from path
     root_name = root_name.replace("\\", "/")
@@ -38,9 +40,10 @@ def get_root_id(service, root_name):
 
     # Go down path to obtain the final parent_id
     parent_id = "root"
-    for folder in folders:
-        parent_id = get_folder_id(service, folder, parent_id)
-    return parent_id
+    for folder_name in folders:
+        folder = get_folder(service, folder_name, parent_id)
+        parent_id = folder["id"]
+    return folder
 
 
 def get_sub_folders(service, parent_id):
@@ -79,33 +82,41 @@ def get_sub_folders(service, parent_id):
     return folders
 
 
-def construct_tree(service, root_name):
+def construct_tree(service, root_name, tree={}):
     """Construct the folder tree from the given list of folders.
-
-    :param folders: List of folders obtained from get_folders
+    
+    :param tree: A list of subtrees which is altered in-place
     """
 
-    def construct_tree_rec(service, nodes, folder_dict):
-        """Recusively construct the tree."""
+    def add_folder_dict(folder, tree):
+        permissions = []
+        for permission in folder["permissions"]:
+            if "deleted" not in permission or not permission["deleted"]:
+                permissions.append(
+                    {
+                        "role": permission["role"],
+                        "emailAddress": permission["emailAddress"],
+                    }
+                )
+        tree[folder["name"]] = {"permissions": permissions, "sub_folders": {}}
 
-        parent_node = nodes[-1]
-        parent_id = parent_node.name
+    def construct_tree_rec(service, tree, parent_id):
+        """Recusively construct the tree."""
 
         folders = get_sub_folders(service, parent_id)
 
         for folder in folders:
             folder_id = folder["id"]
-            nodes.append(Node(folder_id, parent=parent_node))
-            folder_dict[folder_id] = folder
+            add_folder_dict(folder, tree)
 
-            construct_tree_rec(service, nodes, folder_dict)
+            construct_tree_rec(service, tree[folder["name"]]["sub_folders"], folder_id)
 
-        return nodes, folder_dict
+    root_folder = get_root_folder(service, root_name)
+    root_id = root_folder["id"]
 
-    root_id = get_root_id(service, root_name)
+    add_folder_dict(root_folder, tree)
 
-    nodes = [Node(root_id)]
-    return construct_tree_rec(service, nodes, {root_id: root_name})
+    construct_tree_rec(service, tree, root_id)
 
 
 def get_root_names():
@@ -125,22 +136,13 @@ def main():
     # Get drive service
     service = get_service(SCOPES)
 
+    tree = {}
     # Construct tree for each root
     for root in get_root_names():
         # Obtain subfolders in root
-        node_tree, folder_dict = construct_tree(service, root)
-
-        # Render Tree
-        tree = str(RenderTree(node_tree[0]))
-        for folder in folder_dict:
-            folder_obj = folder_dict[folder]
-            if isinstance(folder_obj, type("")):
-                folder_name = folder_obj
-            else:
-                folder_name = folder_obj["name"]
-            tree = tree.replace(folder, folder_name)
-        print(tree)
-        # TODO: Create JSON
+        construct_tree(service, root, tree)
+    with open("tree.json", "w") as f:
+        json.dump(tree, f)
 
 if __name__ == "__main__":
     main()
