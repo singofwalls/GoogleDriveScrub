@@ -92,35 +92,55 @@ def construct_tree(service, root_name, tree=[]):
     :param tree: A list of subtrees which is altered in-place
     """
 
-    def add_folder_dict(service, folder, tree):
+    def crop_permission(permission):
+        """Crop the permission dict to the relevant fields for storing."""
+        email = permission["emailAddress"]
+        role = permission["role"]
+        return {"role": role, "emailAddress": email}
+
+    def add_folder_dict(service, folder, tree, parent_permissions):
+        """Create dict from folder and add to the tree."""
+
+        # Only want relevant fields from permissions for yaml
         permissions = []
         for permission in folder["permissions"]:
-            if "deleted" not in permission or not permission["deleted"]:
-                email = permission["emailAddress"]
-                role = permission["role"]
-                permissions.append({"role": role, "emailAddress": email})
+            if "deleted" in permission and permission["deleted"]:
+                continue
+
+            permission_cropped = crop_permission(permission)
+            if permission_cropped not in parent_permissions:
+                permissions.append(permission_cropped)
         tree.append(
             {"name": folder["name"], "permissions": permissions, "sub_folders": []}
         )
 
-    def construct_tree_rec(service, tree, parent_id):
+    def construct_tree_rec(service, tree, parent_id, parent_permissions):
         """Recusively construct the tree."""
 
         folders = get_sub_folders(service, parent_id)
 
         for folder in folders:
             folder_id = folder["id"]
-            add_folder_dict(service, folder, tree)
+            add_folder_dict(service, folder, tree, parent_permissions)
 
-            construct_tree_rec(service, tree[-1]["sub_folders"], folder_id)
+            combined_permissions = []
+            cropped_permissions = list(map(crop_permission, folder["permissions"]))
+            for permission in cropped_permissions + parent_permissions:
+                if permission not in combined_permissions:
+                    combined_permissions.append(permission)
+
+            construct_tree_rec(
+                service, tree[-1]["sub_folders"], folder_id, combined_permissions
+            )
 
     root_folder = get_root_folder(service, root_name)
     root_id = root_folder["id"]
     root_name = root_folder["name"]
 
-    add_folder_dict(service, root_folder, tree)
+    add_folder_dict(service, root_folder, tree, [])
+    root_permissions = list(map(crop_permission, root_folder["permissions"]))
 
-    construct_tree_rec(service, tree[-1]["sub_folders"], root_id)
+    construct_tree_rec(service, tree[-1]["sub_folders"], root_id, root_permissions)
 
 
 def get_root_names():
@@ -143,6 +163,7 @@ def main():
     service = get_service(SCOPES)
 
     tree = []
+    print("Constructing tree from roots on drive ...")
     # Construct tree for each root
     for root in get_root_names():
         # Obtain subfolders in root
