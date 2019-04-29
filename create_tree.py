@@ -128,7 +128,6 @@ def get_root_names():
 
     # TODO: Test root.txt = "/" for using actual drive root as root
     # TODO: Test multiple roots
-    # TODO: Change name of project (update creds)
 
     def is_not_comment(line):
         """Check if the given line is a comment."""
