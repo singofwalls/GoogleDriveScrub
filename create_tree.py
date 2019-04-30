@@ -147,7 +147,8 @@ def get_root_names():
     """Get a list of root names from the roots.txt file."""
 
     # TODO: Test root.txt = "/" for using actual drive root as root
-    # TODO: Test multiple roots
+    # TODO: Upload roots to correct path to root rather than the drive root
+    # TODO: Check if roots already exist and tell user to delete them first
 
     def is_not_comment(line):
         """Check if the given line is a comment."""
@@ -163,9 +164,9 @@ def main():
     service = get_service(SCOPES)
 
     tree = []
-    print("Constructing tree from roots on drive ...")
     # Construct tree for each root
     for root in get_root_names():
+        print("Constructing " + root["name"] + " folder tree from drive ...")
         # Obtain subfolders in root
         construct_tree(service, root, tree)
     with open(TREE_FILE, "w") as f:

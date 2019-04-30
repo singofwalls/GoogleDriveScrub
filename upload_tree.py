@@ -65,12 +65,13 @@ def add_folder(service, folder, parent_id=None):
                     ).execute()
                     update_progress()
                     uploaded = True
-                except HttpError:
+                except HttpError as e:
+                    # BUG: Roots after first appear to never upload
                     # File not done uploading, perform exponential backoff
                     output(
                         folder["name"]
                         + " not ready to set permissions. Waiting "
-                        + sleep_time
+                        + str(sleep_time)
                         + " seconds."
                     )
                     time.sleep(sleep_time)
@@ -114,9 +115,16 @@ def main():
     global total_operations
     service = get_service(SCOPES)
     tree = get_tree()
-    total_operations = calculate_operations(tree)
+
+    total_operations = calculate_operations(tree) + 1
+    update_progress()
+
+    output("Uploading tree ...")
     for folder in tree:
+        progress_bar.set_description("On " + folder["name"])
         add_folder(service, folder)
+
+    progress_bar.close()
 
 
 if __name__ == "__main__":
