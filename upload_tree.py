@@ -7,7 +7,6 @@ from setup_drive_api import (
     get_file_contents,
     get_folder,
     handle_error,
-    get_error_details,
 )
 import yaml
 from tqdm import tqdm
@@ -40,7 +39,7 @@ def add_folder(service, folder, parent_id=None, owner=None):
     def upload_folder(service, folder, parent_id):
         """Upload a given folder and return the upload's id."""
         try:
-            if parent_id == None:
+            if isinstance(parent_id, type(None)):
                 existing_parent = "root"
             else:
                 existing_parent = parent_id
@@ -95,6 +94,7 @@ def add_folder(service, folder, parent_id=None, owner=None):
 
                 except HttpError as e:
                     handle_error(e, output)
+
     progress_bar.set_description(folder["name"])
     uploaded_folder_id = upload_folder(service, folder, parent_id)
     set_permissions(service, folder, uploaded_folder_id, owner=owner)
