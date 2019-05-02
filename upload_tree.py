@@ -4,9 +4,11 @@ from setup_drive_api import get_service, SCOPES, HttpError
 import yaml
 from tqdm import tqdm
 import time
+import json
 
 FOLDER_TYPE = "application/vnd.google-apps.folder"
 TREE_FILE = "tree.yaml"
+RATE_ERRORS = ["userRateLimitExceeded", "rateLimitExceeded", "backendError"]
 
 # Progress globals
 total_operations = 0
@@ -55,6 +57,7 @@ def add_folder(service, folder, parent_id=None):
 
             uploaded = False
             while not uploaded:
+
                 try:
                     service.permissions().create(
                         fileId=uploaded_folder_id,
@@ -65,17 +68,25 @@ def add_folder(service, folder, parent_id=None):
                     ).execute()
                     update_progress()
                     uploaded = True
+
                 except HttpError as e:
-                    # BUG: Roots after first appear to never upload
-                    # File not done uploading, perform exponential backoff
-                    output(
-                        folder["name"]
-                        + " not ready to set permissions. Waiting "
-                        + str(sleep_time)
-                        + " seconds."
-                    )
-                    time.sleep(sleep_time)
-                    sleep_time *= 2
+
+                    error = json.loads(e.content)["error"]["errors"][0]
+                    reason = error["reason"]
+                    message = error["message"]
+                    if reason in RATE_ERRORS:
+                        # File not done uploading, perform exponential backoff
+                        output(
+                            folder["name"]
+                            + " not ready to set permissions. Waiting "
+                            + str(sleep_time)
+                            + " seconds."
+                        )
+                        output("Reason: " + reason + ": " + message)
+                        time.sleep(sleep_time)
+                        sleep_time *= 2
+                    else:
+                        raise e
 
     uploaded_folder_id = upload_folder(service, folder, parent_id)
     set_permissions(service, folder, uploaded_folder_id)

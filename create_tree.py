@@ -149,6 +149,9 @@ def get_root_names():
     # TODO: Test root.txt = "/" for using actual drive root as root
     # TODO: Upload roots to correct path to root rather than the drive root
     # TODO: Check if roots already exist and tell user to delete them first
+    # TODO: Determine if tracking role is really important --> current tree see's owner role swapped throughout
+    #       Allow for owner role assignment to root. Assume all other roles are writer
+    #       This will fix some dupe permissions
 
     def is_not_comment(line):
         """Check if the given line is a comment."""
