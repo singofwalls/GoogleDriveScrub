@@ -3,48 +3,33 @@
 Sharing permissions are perserved.
 """
 
-from setup_drive_api import get_service, SCOPES, get_file_contents
+from setup_drive_api import (
+    get_service,
+    SCOPES,
+    get_file_contents,
+    get_folder,
+    FIELDS,
+    QUERY_ADDENDUM,
+)
 import yaml
 
-FOLDER_TYPE = "application/vnd.google-apps.folder"
-QUERY_ADDENDUM = f"mimeType = '{FOLDER_TYPE}' and not trashed"
-FIELDS = "nextPageToken, files(id, name, permissions(type, id, emailAddress, role, \
-    deleted), kind, mimeType, parents, trashed)"
 ROOTS_FILE = "roots.txt"
 TREE_FILE = "tree.yaml"
+
+
+def split_path(path):
+    """Split a path into a list of subfolders."""
+    path = path.replace("\\", "/")
+    folders = path.split("/")
+    return folders
 
 
 def get_root_folder(service, root_name):
     """Get folder object for the root folder."""
 
-    def get_folder(service, folder_name, parent_id):
-        """Get the folder object based on name and parent."""
-        parent_string = ""
-        if parent_id != "root":
-            parent_string = f" and '{parent_id}' in parents"
-        results = (
-            service.files()
-            .list(
-                pageToken=None,
-                fields=FIELDS,
-                q=f"name = '{folder_name}' and {QUERY_ADDENDUM}" + parent_string,
-                corpora="allDrives",
-                includeItemsFromAllDrives=True,
-                supportsAllDrives=True,
-            )
-            .execute()
-        )
-        if not results["files"]:
-            raise FileNotFoundError(folder_name)
-        return results["files"][0]
-
-    # Get folders from path
-    root_name = root_name.replace("\\", "/")
-    folders = root_name.split("/")
-
     # Go down path to obtain the final parent_id
     parent_id = "root"
-    for folder_name in folders:
+    for folder_name in split_path(root_name):
         folder = get_folder(service, folder_name, parent_id)
         parent_id = folder["id"]
     return folder
@@ -86,33 +71,33 @@ def get_sub_folders(service, parent_id):
     return folders
 
 
-def construct_tree(service, root_name, tree=[]):
+def crop_permission(permission):
+    """Crop the permission dict to the relevant fields for storing."""
+    # Only need email now, Can easily add more fields if needed later
+    email = permission["emailAddress"]
+    return {"emailAddress": email}
+
+
+def add_folder_dict_to_tree(folder, tree, parent_permissions=[]):
+    """Create dict from folder and add to the tree."""
+
+    # Only want relevant fields from permissions for yaml
+    permissions = []
+    for permission in folder["permissions"]:
+        if "deleted" in permission and permission["deleted"]:
+            continue
+
+        permission_cropped = crop_permission(permission)
+        if permission_cropped not in parent_permissions:
+            permissions.append(permission_cropped)
+    tree.append({"name": folder["name"], "permissions": permissions, "sub_folders": []})
+
+
+def construct_tree(service, full_root_name, tree=[]):
     """Construct the folder tree from the given list of folders.
 
     :param tree: A list of subtrees which is altered in-place
     """
-
-    def crop_permission(permission):
-        """Crop the permission dict to the relevant fields for storing."""
-        # Only need email now, Can easily add more fields if needed later
-        email = permission["emailAddress"]
-        return {"emailAddress": email}
-
-    def add_folder_dict(service, folder, tree, parent_permissions):
-        """Create dict from folder and add to the tree."""
-
-        # Only want relevant fields from permissions for yaml
-        permissions = []
-        for permission in folder["permissions"]:
-            if "deleted" in permission and permission["deleted"]:
-                continue
-
-            permission_cropped = crop_permission(permission)
-            if permission_cropped not in parent_permissions:
-                permissions.append(permission_cropped)
-        tree.append(
-            {"name": folder["name"], "permissions": permissions, "sub_folders": []}
-        )
 
     def construct_tree_rec(service, tree, parent_id, parent_permissions):
         """Recusively construct the tree."""
@@ -121,7 +106,7 @@ def construct_tree(service, root_name, tree=[]):
 
         for folder in folders:
             folder_id = folder["id"]
-            add_folder_dict(service, folder, tree, parent_permissions)
+            add_folder_dict_to_tree(folder, tree, parent_permissions)
 
             combined_permissions = []
             cropped_permissions = list(map(crop_permission, folder["permissions"]))
@@ -133,14 +118,34 @@ def construct_tree(service, root_name, tree=[]):
                 service, tree[-1]["sub_folders"], folder_id, combined_permissions
             )
 
-    root_folder = get_root_folder(service, root_name)
+    root_folder = get_root_folder(service, full_root_name)
     root_id = root_folder["id"]
-    root_name = root_folder["name"]
 
-    add_folder_dict(service, root_folder, tree, [])
+    add_folder_dict_to_tree(root_folder, tree)
     root_permissions = list(map(crop_permission, root_folder["permissions"]))
 
     construct_tree_rec(service, tree[-1]["sub_folders"], root_id, root_permissions)
+
+
+def get_sub_tree(path, tree):
+    """Return the sub tree for the given path."""
+
+    def find_folder(folder_name, tree):
+        """Find the folder in the tree."""
+        for folder in tree:
+            if folder["name"] == folder_name:
+                return folder
+        return None
+
+    for folder_name in split_path(path)[:-1]:
+        # Last folder in path is a root and is added later when pulling from drive
+        found_folder = find_folder(folder_name, tree)
+        if isinstance(found_folder, type(None)):
+            folder = {"name": folder_name, "permissions": []}
+            add_folder_dict_to_tree(folder, tree)
+            found_folder = tree[-1]
+        tree = found_folder["sub_folders"]
+    return tree
 
 
 def main():
@@ -153,7 +158,8 @@ def main():
     for root in get_file_contents(ROOTS_FILE):
         print("Constructing " + root + " folder tree from drive ...")
         # Obtain subfolders in root
-        construct_tree(service, root, tree)
+        sub_tree = get_sub_tree(root, tree)
+        construct_tree(service, root, sub_tree)
     with open(TREE_FILE, "w") as f:
         yaml.dump(tree, f)
 
@@ -163,6 +169,3 @@ if __name__ == "__main__":
 
 
 # TODO: Test root.txt = "/" for using actual drive root as root
-# TODO: Upload roots to correct path to root rather than the drive root
-# TODO: Check if roots already exist and tell user to delete them first
-

@@ -1,14 +1,19 @@
 """Load a tree with sharing permissions from a yaml into the drive."""
 
-from setup_drive_api import get_service, SCOPES, HttpError, get_file_contents
+from googleapiclient.errors import HttpError
+from setup_drive_api import (
+    get_service,
+    SCOPES,
+    get_file_contents,
+    get_folder,
+    handle_error,
+    get_error_details,
+)
 import yaml
 from tqdm import tqdm
-import time
-import json
 
 FOLDER_TYPE = "application/vnd.google-apps.folder"
 TREE_FILE = "tree.yaml"
-RATE_ERRORS = ["userRateLimitExceeded", "rateLimitExceeded", "backendError"]
 OWNER_FILE = "owner_email.txt"
 
 # Progress globals
@@ -34,20 +39,33 @@ def add_folder(service, folder, parent_id=None, owner=None):
 
     def upload_folder(service, folder, parent_id):
         """Upload a given folder and return the upload's id."""
-        file_metadata = {"name": folder["name"], "mimeType": FOLDER_TYPE}
-        if not isinstance(parent_id, type(None)):
-            file_metadata["parents"] = [parent_id]
-        uploaded_folder = (
-            service.files().create(body=file_metadata, fields="id").execute()
-        )
+        try:
+            if parent_id == None:
+                existing_parent = "root"
+            else:
+                existing_parent = parent_id
+            existing_folder = get_folder(service, folder["name"], existing_parent)
+        except FileNotFoundError:
+            existing_folder = None
+
+        if not isinstance(existing_folder, type(None)) and not folder["permissions"]:
+            # Use existing folder if no permissions to be uploaded
+            uploaded_folder_id = existing_folder["id"]
+        else:
+            # Upload new folder
+            file_metadata = {"name": folder["name"], "mimeType": FOLDER_TYPE}
+            if not isinstance(parent_id, type(None)):
+                file_metadata["parents"] = [parent_id]
+            uploaded_folder = (
+                service.files().create(body=file_metadata, fields="id").execute()
+            )
+            uploaded_folder_id = uploaded_folder["id"]
+
         update_progress()
-        uploaded_folder_id = uploaded_folder["id"]
         return uploaded_folder_id
 
     def set_permissions(service, folder, uploaded_folder_id, owner=None):
         """Copy permissions from a given folder to the uploaded folder from id."""
-        sleep_time = 1
-
         # Set permissions
         for permission in folder["permissions"]:
             email = permission["emailAddress"]
@@ -76,24 +94,8 @@ def add_folder(service, folder, parent_id=None, owner=None):
                     uploaded = True
 
                 except HttpError as e:
-
-                    error = json.loads(e.content)["error"]["errors"][0]
-                    reason = error["reason"]
-                    message = error["message"]
-                    if reason in RATE_ERRORS:
-                        # File not done uploading, perform exponential backoff
-                        output(
-                            folder["name"]
-                            + " not ready to set permissions. Waiting "
-                            + str(sleep_time)
-                            + " seconds."
-                        )
-                        output("Reason: " + reason + ": " + message)
-                        time.sleep(sleep_time)
-                        sleep_time *= 2
-                    else:
-                        raise e
-
+                    handle_error(e, output)
+    progress_bar.set_description(folder["name"])
     uploaded_folder_id = upload_folder(service, folder, parent_id)
     set_permissions(service, folder, uploaded_folder_id, owner=owner)
 
@@ -140,10 +142,10 @@ def main():
 
     output("Uploading tree ...")
     for folder in tree:
-        progress_bar.set_description("On " + folder["name"])
         add_folder(service, folder, owner=owner_email)
 
-    progress_bar.close()
+    progress_bar.clear()
+    print("Complete.")
 
 
 if __name__ == "__main__":

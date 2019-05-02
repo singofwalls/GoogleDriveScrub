@@ -1,437 +1,440 @@
-- name: Curriculum
-  permissions:
-  - emailAddress: it@ksbstatesim.org
-  - emailAddress: john.shively@ksbstatesim.org
-  - emailAddress: pumposh@live.com
-  - emailAddress: DroseOutdoors@gmail.com
-  - emailAddress: jacobthomasstark@gmail.com
-  - emailAddress: 8.tpledger@kscholars.org
-  - emailAddress: JpShively1@gmail.com
-  - emailAddress: thaddeustuck@gmail.com
-  - emailAddress: ring.scott1@gmail.com
-  - emailAddress: MathewsReece@gmail.com
-  - emailAddress: keeprunning218@gmail.com
+- name: BSroot
+  permissions: []
   sub_folders:
-  - name: Kansas State Senate
+  - name: Curriculum
     permissions:
-    - emailAddress: house@ksbstatesim.org
-    - emailAddress: senate@ksbstatesim.org
+    - emailAddress: it@ksbstatesim.org
+    - emailAddress: john.shively@ksbstatesim.org
+    - emailAddress: pumposh@live.com
+    - emailAddress: DroseOutdoors@gmail.com
+    - emailAddress: jacobthomasstark@gmail.com
+    - emailAddress: 8.tpledger@kscholars.org
+    - emailAddress: JpShively1@gmail.com
+    - emailAddress: thaddeustuck@gmail.com
+    - emailAddress: ring.scott1@gmail.com
+    - emailAddress: MathewsReece@gmail.com
+    - emailAddress: keeprunning218@gmail.com
     sub_folders:
-    - name: Form Publisher Output's Folder
-      permissions: []
-      sub_folders: []
-  - name: Kansas House of Representatives
-    permissions:
-    - emailAddress: house@ksbstatesim.org
-    sub_folders: []
-  - name: Department Share
-    permissions: []
-    sub_folders:
-    - name: Dept. of Economy Share
+    - name: Kansas State Senate
       permissions:
-      - emailAddress: economy@ksbstatesim.org
-      sub_folders: []
-    - name: Dept. of Humanities Share
-      permissions:
-      - emailAddress: humanities@ksbstatesim.org
-      sub_folders: []
-    - name: Dept. of Natural Resources Share
-      permissions:
-      - emailAddress: naturalresources@ksbstatesim.org
-      sub_folders: []
-  - name: Counties Share
-    permissions: []
-    sub_folders:
-    - name: Seitz Share
-      permissions:
-      - emailAddress: seitz@ksbstatesim.org
+      - emailAddress: house@ksbstatesim.org
+      - emailAddress: senate@ksbstatesim.org
       sub_folders:
-      - name: Wiles Share
+      - name: Form Publisher Output's Folder
+        permissions: []
+        sub_folders: []
+    - name: Kansas House of Representatives
+      permissions:
+      - emailAddress: house@ksbstatesim.org
+      sub_folders: []
+    - name: Department Share
+      permissions: []
+      sub_folders:
+      - name: Dept. of Economy Share
+        permissions:
+        - emailAddress: economy@ksbstatesim.org
+        sub_folders: []
+      - name: Dept. of Humanities Share
+        permissions:
+        - emailAddress: humanities@ksbstatesim.org
+        sub_folders: []
+      - name: Dept. of Natural Resources Share
+        permissions:
+        - emailAddress: naturalresources@ksbstatesim.org
+        sub_folders: []
+    - name: Counties Share
+      permissions: []
+      sub_folders:
+      - name: Seitz Share
+        permissions:
+        - emailAddress: seitz@ksbstatesim.org
+        sub_folders:
+        - name: Wiles Share
+          permissions:
+          - emailAddress: wiles@ksbstatesim.org
+          sub_folders: []
+        - name: Whorley Share
+          permissions:
+          - emailAddress: whorley@ksbstatesim.org
+          sub_folders: []
+        - name: Werring Share
+          permissions:
+          - emailAddress: werring@ksbstatesim.org
+          sub_folders: []
+      - name: Powell Share
+        permissions:
+        - emailAddress: powell@ksbstatesim.org
+        sub_folders:
+        - name: Spigarelli Share
+          permissions:
+          - emailAddress: spigarelli@ksbstatesim.org
+          sub_folders: []
+        - name: Shelton Share
+          permissions:
+          - emailAddress: shelton@ksbstatesim.org
+          sub_folders: []
+        - name: Schrag Share
+          permissions:
+          - emailAddress: schrag@ksbstatesim.org
+          sub_folders: []
+      - name: Pershing Share
+        permissions:
+        - emailAddress: pershing@ksbstatesim.org
+        sub_folders:
+        - name: Schmitt Share
+          permissions:
+          - emailAddress: schmitt@ksbstatesim.org
+          sub_folders: []
+        - name: Raymond Share
+          permissions:
+          - emailAddress: raymond@ksbstatesim.org
+          sub_folders: []
+        - name: Perrill Share
+          permissions:
+          - emailAddress: perrill@ksbstatesim.org
+          sub_folders: []
+      - name: Patton Share
+        permissions:
+        - emailAddress: patton@ksbstatesim.org
+        sub_folders:
+        - name: OLeary Share
+          permissions:
+          - emailAddress: o'leary@ksbstatesim.org
+          sub_folders: []
+        - name: Newman Share
+          permissions:
+          - emailAddress: newman@ksbstatesim.org
+          sub_folders: []
+        - name: McCoy Share
+          permissions:
+          - emailAddress: mccoy@ksbstatesim.org
+          sub_folders: []
+      - name: Marshall Share
+        permissions:
+        - emailAddress: marshall@ksbstatesim.org
+        sub_folders:
+        - name: Mantey Share
+          permissions:
+          - emailAddress: mantey@ksbstatesim.org
+          sub_folders: []
+        - name: Lane Share
+          permissions:
+          - emailAddress: lane@ksbstatesim.org
+          sub_folders: []
+        - name: Kyle Share
+          permissions:
+          - emailAddress: kyle@ksbstatesim.org
+          sub_folders: []
+      - name: MacArthur Share
+        permissions:
+        - emailAddress: macarthur@ksbstatesim.org
+        sub_folders:
+        - name: Klassen Share
+          permissions:
+          - emailAddress: klassen@ksbstatesim.org
+          sub_folders: []
+        - name: Johnson Share
+          permissions:
+          - emailAddress: johnson@ksbstatesim.org
+          sub_folders: []
+        - name: Janssen Share
+          permissions:
+          - emailAddress: janssen@ksbstatesim.org
+          sub_folders: []
+      - name: King Share
+        permissions:
+        - emailAddress: king@ksbstatesim.org
+        sub_folders:
+        - name: Icenogle Share
+          permissions:
+          - emailAddress: icenogle@ksbstatesim.org
+          sub_folders: []
+        - name: Hiatt Share
+          permissions:
+          - emailAddress: hiatt@ksbstatesim.org
+          sub_folders: []
+        - name: Hasler Share
+          permissions:
+          - emailAddress: hasler@ksbstatesim.org
+          sub_folders: []
+      - name: Kennedy Share
+        permissions:
+        - emailAddress: kennedy@ksbstatesim.org
+        sub_folders:
+        - name: Haney Share
+          permissions:
+          - emailAddress: haney@ksbstatesim.org
+          sub_folders: []
+        - name: Gardner Share
+          permissions:
+          - emailAddress: gardner@ksbstatesim.org
+          sub_folders: []
+        - name: Finley Share
+          permissions:
+          - emailAddress: finley@ksbstatesim.org
+          sub_folders: []
+      - name: Eisenhower Share
+        permissions:
+        - emailAddress: eisenhower@ksbstatesim.org
+        sub_folders:
+        - name: Crum Share
+          permissions:
+          - emailAddress: crum@ksbstatesim.org
+          sub_folders: []
+        - name: Chastain Share
+          permissions:
+          - emailAddress: chastain@ksbstatesim.org
+          sub_folders: []
+        - name: Bramlage Share
+          permissions:
+          - emailAddress: bramlage@ksbstatesim.org
+          sub_folders: []
+      - name: Bradley Share
+        permissions:
+        - emailAddress: bradley@ksbstatesim.org
+        sub_folders:
+        - name: Bluemke Share
+          permissions:
+          - emailAddress: bluemke@ksbstatesim.org
+          sub_folders: []
+        - name: Bley Share
+          permissions:
+          - emailAddress: bley@ksbstatesim.org
+          sub_folders: []
+        - name: Aylward Share
+          permissions:
+          - emailAddress: aylward@ksbstatesim.org
+          sub_folders: []
+        - name: Bramlage Share
+          permissions: []
+          sub_folders: []
+    - name: Departments Share
+      permissions: []
+      sub_folders:
+      - name: Dept. of Humanities Share
+        permissions: []
+        sub_folders: []
+      - name: Dept. of Natural Resources Share
+        permissions: []
+        sub_folders: []
+      - name: Dept. of Economy Share
+        permissions: []
+        sub_folders: []
+  - name: Bank
+    permissions:
+    - emailAddress: john.shively@ksbstatesim.org
+    - emailAddress: costestimate@ksbstatesim.org
+    - emailAddress: pumposh@live.com
+    - emailAddress: DroseOutdoors@gmail.com
+    - emailAddress: 8.tpledger@kscholars.org
+    - emailAddress: JpShively1@gmail.com
+    - emailAddress: thaddeustuck@gmail.com
+    - emailAddress: MathewsReece@gmail.com
+    - emailAddress: jacobthomasstark@gmail.com
+    - emailAddress: keeprunning218@gmail.com
+    - emailAddress: bank@ksbstatesim.org
+    - emailAddress: ring.scott1@gmail.com
+    - emailAddress: it@ksbstatesim.org
+    sub_folders:
+    - name: Entity Folders
+      permissions: []
+      sub_folders:
+      - name: Wiles Bank Share
         permissions:
         - emailAddress: wiles@ksbstatesim.org
         sub_folders: []
-      - name: Whorley Share
+      - name: Whorley Bank Share
         permissions:
         - emailAddress: whorley@ksbstatesim.org
         sub_folders: []
-      - name: Werring Share
+      - name: Werring Bank Share
         permissions:
         - emailAddress: werring@ksbstatesim.org
         sub_folders: []
-    - name: Powell Share
-      permissions:
-      - emailAddress: powell@ksbstatesim.org
-      sub_folders:
-      - name: Spigarelli Share
+      - name: Spigarelli Bank Share
         permissions:
         - emailAddress: spigarelli@ksbstatesim.org
         sub_folders: []
-      - name: Shelton Share
+      - name: Shelton Bank Share
         permissions:
         - emailAddress: shelton@ksbstatesim.org
         sub_folders: []
-      - name: Schrag Share
+      - name: Seitz Bank Share
+        permissions:
+        - emailAddress: seitz@ksbstatesim.org
+        sub_folders: []
+      - name: Schrag Bank Share
         permissions:
         - emailAddress: schrag@ksbstatesim.org
         sub_folders: []
-    - name: Pershing Share
-      permissions:
-      - emailAddress: pershing@ksbstatesim.org
-      sub_folders:
-      - name: Schmitt Share
+      - name: Schmitt Bank Share
         permissions:
         - emailAddress: schmitt@ksbstatesim.org
         sub_folders: []
-      - name: Raymond Share
+      - name: Raymond Bank Share
         permissions:
         - emailAddress: raymond@ksbstatesim.org
         sub_folders: []
-      - name: Perrill Share
+      - name: Powell Bank Share
+        permissions:
+        - emailAddress: powell@ksbstatesim.org
+        sub_folders: []
+      - name: Pershing Bank Share
+        permissions:
+        - emailAddress: pershing@ksbstatesim.org
+        sub_folders: []
+      - name: Perrill Bank Share
         permissions:
         - emailAddress: perrill@ksbstatesim.org
         sub_folders: []
-    - name: Patton Share
-      permissions:
-      - emailAddress: patton@ksbstatesim.org
-      sub_folders:
-      - name: OLeary Share
+      - name: Patton Bank Share
+        permissions:
+        - emailAddress: patton@ksbstatesim.org
+        sub_folders: []
+      - name: OLeary Bank Share
         permissions:
         - emailAddress: o'leary@ksbstatesim.org
         sub_folders: []
-      - name: Newman Share
+      - name: Newman Bank Share
         permissions:
         - emailAddress: newman@ksbstatesim.org
         sub_folders: []
-      - name: McCoy Share
+      - name: Natural Resources Bank Share
+        permissions:
+        - emailAddress: naturalresources@ksbstatesim.org
+        sub_folders: []
+      - name: Nationalist Bank Share
+        permissions:
+        - emailAddress: nat@ksbstatesim.org
+        sub_folders: []
+      - name: Media Bank Share
+        permissions:
+        - emailAddress: media@ksbstatesim.org
+        sub_folders: []
+      - name: McCoy Bank Share
         permissions:
         - emailAddress: mccoy@ksbstatesim.org
         sub_folders: []
-    - name: Marshall Share
-      permissions:
-      - emailAddress: marshall@ksbstatesim.org
-      sub_folders:
-      - name: Mantey Share
+      - name: Marshall Bank Share
+        permissions:
+        - emailAddress: marshall@ksbstatesim.org
+        sub_folders: []
+      - name: Mantey Bank Share
         permissions:
         - emailAddress: mantey@ksbstatesim.org
         sub_folders: []
-      - name: Lane Share
+      - name: MacArthur Bank Share
+        permissions:
+        - emailAddress: macarthur@ksbstatesim.org
+        sub_folders: []
+      - name: Lane Bank Share
         permissions:
         - emailAddress: lane@ksbstatesim.org
         sub_folders: []
-      - name: Kyle Share
+      - name: Kyle Bank Share
         permissions:
         - emailAddress: kyle@ksbstatesim.org
         sub_folders: []
-    - name: MacArthur Share
-      permissions:
-      - emailAddress: macarthur@ksbstatesim.org
-      sub_folders:
-      - name: Klassen Share
+      - name: Klassen Bank Share
         permissions:
         - emailAddress: klassen@ksbstatesim.org
         sub_folders: []
-      - name: Johnson Share
+      - name: King Bank Share
+        permissions:
+        - emailAddress: king@ksbstatesim.org
+        sub_folders: []
+      - name: Kennedy Bank Share
+        permissions:
+        - emailAddress: kennedy@ksbstatesim.org
+        sub_folders: []
+      - name: Johnson Bank Share
         permissions:
         - emailAddress: johnson@ksbstatesim.org
         sub_folders: []
-      - name: Janssen Share
+      - name: Janssen Bank Share
         permissions:
         - emailAddress: janssen@ksbstatesim.org
         sub_folders: []
-    - name: King Share
-      permissions:
-      - emailAddress: king@ksbstatesim.org
-      sub_folders:
-      - name: Icenogle Share
+      - name: Icenogle Bank Share
         permissions:
         - emailAddress: icenogle@ksbstatesim.org
         sub_folders: []
-      - name: Hiatt Share
+      - name: Humanities Bank Share
+        permissions:
+        - emailAddress: humanities@ksbstatesim.org
+        sub_folders: []
+      - name: Hiatt Bank Share
         permissions:
         - emailAddress: hiatt@ksbstatesim.org
         sub_folders: []
-      - name: Hasler Share
+      - name: Hasler Bank Share
         permissions:
         - emailAddress: hasler@ksbstatesim.org
         sub_folders: []
-    - name: Kennedy Share
-      permissions:
-      - emailAddress: kennedy@ksbstatesim.org
-      sub_folders:
-      - name: Haney Share
+      - name: Haney Bank Share
         permissions:
         - emailAddress: haney@ksbstatesim.org
         sub_folders: []
-      - name: Gardner Share
+      - name: Gardner Bank Share
         permissions:
         - emailAddress: gardner@ksbstatesim.org
         sub_folders: []
-      - name: Finley Share
+      - name: Finley Bank Share
         permissions:
         - emailAddress: finley@ksbstatesim.org
         sub_folders: []
-    - name: Eisenhower Share
-      permissions:
-      - emailAddress: eisenhower@ksbstatesim.org
-      sub_folders:
-      - name: Crum Share
+      - name: Federalist Bank Share
+        permissions:
+        - emailAddress: fed@ksbstatesim.org
+        sub_folders: []
+      - name: Eisenhower Bank Share
+        permissions:
+        - emailAddress: eisenhower@ksbstatesim.org
+        sub_folders: []
+      - name: Economy Bank Share
+        permissions:
+        - emailAddress: economy@ksbstatesim.org
+        sub_folders: []
+      - name: Crum Bank Share
         permissions:
         - emailAddress: crum@ksbstatesim.org
         sub_folders: []
-      - name: Chastain Share
+      - name: Chastain Bank Share
         permissions:
         - emailAddress: chastain@ksbstatesim.org
         sub_folders: []
-      - name: Bramlage Share
+      - name: Bramlage Bank Share
         permissions:
         - emailAddress: bramlage@ksbstatesim.org
         sub_folders: []
-    - name: Bradley Share
-      permissions:
-      - emailAddress: bradley@ksbstatesim.org
-      sub_folders:
-      - name: Bluemke Share
+      - name: Bradley Bank Share
+        permissions:
+        - emailAddress: bradley@ksbstatesim.org
+        sub_folders: []
+      - name: Bluemke Bank Share
         permissions:
         - emailAddress: bluemke@ksbstatesim.org
         sub_folders: []
-      - name: Bley Share
+      - name: Bley Bank Share
         permissions:
         - emailAddress: bley@ksbstatesim.org
         sub_folders: []
-      - name: Aylward Share
+      - name: Aylward Bank Share
         permissions:
         - emailAddress: aylward@ksbstatesim.org
         sub_folders: []
-      - name: Bramlage Share
+      - name: Dept of Economy Bank Share
         permissions: []
         sub_folders: []
-  - name: Departments Share
-    permissions: []
-    sub_folders:
-    - name: Dept. of Humanities Share
-      permissions: []
-      sub_folders: []
-    - name: Dept. of Natural Resources Share
-      permissions: []
-      sub_folders: []
-    - name: Dept. of Economy Share
-      permissions: []
-      sub_folders: []
-- name: Bank
-  permissions:
-  - emailAddress: john.shively@ksbstatesim.org
-  - emailAddress: costestimate@ksbstatesim.org
-  - emailAddress: pumposh@live.com
-  - emailAddress: DroseOutdoors@gmail.com
-  - emailAddress: 8.tpledger@kscholars.org
-  - emailAddress: JpShively1@gmail.com
-  - emailAddress: thaddeustuck@gmail.com
-  - emailAddress: MathewsReece@gmail.com
-  - emailAddress: jacobthomasstark@gmail.com
-  - emailAddress: keeprunning218@gmail.com
-  - emailAddress: bank@ksbstatesim.org
-  - emailAddress: ring.scott1@gmail.com
-  - emailAddress: it@ksbstatesim.org
-  sub_folders:
-  - name: Entity Folders
-    permissions: []
-    sub_folders:
-    - name: Wiles Bank Share
-      permissions:
-      - emailAddress: wiles@ksbstatesim.org
-      sub_folders: []
-    - name: Whorley Bank Share
-      permissions:
-      - emailAddress: whorley@ksbstatesim.org
-      sub_folders: []
-    - name: Werring Bank Share
-      permissions:
-      - emailAddress: werring@ksbstatesim.org
-      sub_folders: []
-    - name: Spigarelli Bank Share
-      permissions:
-      - emailAddress: spigarelli@ksbstatesim.org
-      sub_folders: []
-    - name: Shelton Bank Share
-      permissions:
-      - emailAddress: shelton@ksbstatesim.org
-      sub_folders: []
-    - name: Seitz Bank Share
-      permissions:
-      - emailAddress: seitz@ksbstatesim.org
-      sub_folders: []
-    - name: Schrag Bank Share
-      permissions:
-      - emailAddress: schrag@ksbstatesim.org
-      sub_folders: []
-    - name: Schmitt Bank Share
-      permissions:
-      - emailAddress: schmitt@ksbstatesim.org
-      sub_folders: []
-    - name: Raymond Bank Share
-      permissions:
-      - emailAddress: raymond@ksbstatesim.org
-      sub_folders: []
-    - name: Powell Bank Share
-      permissions:
-      - emailAddress: powell@ksbstatesim.org
-      sub_folders: []
-    - name: Pershing Bank Share
-      permissions:
-      - emailAddress: pershing@ksbstatesim.org
-      sub_folders: []
-    - name: Perrill Bank Share
-      permissions:
-      - emailAddress: perrill@ksbstatesim.org
-      sub_folders: []
-    - name: Patton Bank Share
-      permissions:
-      - emailAddress: patton@ksbstatesim.org
-      sub_folders: []
-    - name: OLeary Bank Share
-      permissions:
-      - emailAddress: o'leary@ksbstatesim.org
-      sub_folders: []
-    - name: Newman Bank Share
-      permissions:
-      - emailAddress: newman@ksbstatesim.org
-      sub_folders: []
-    - name: Natural Resources Bank Share
-      permissions:
-      - emailAddress: naturalresources@ksbstatesim.org
-      sub_folders: []
-    - name: Nationalist Bank Share
-      permissions:
-      - emailAddress: nat@ksbstatesim.org
-      sub_folders: []
-    - name: Media Bank Share
-      permissions:
-      - emailAddress: media@ksbstatesim.org
-      sub_folders: []
-    - name: McCoy Bank Share
-      permissions:
-      - emailAddress: mccoy@ksbstatesim.org
-      sub_folders: []
-    - name: Marshall Bank Share
-      permissions:
-      - emailAddress: marshall@ksbstatesim.org
-      sub_folders: []
-    - name: Mantey Bank Share
-      permissions:
-      - emailAddress: mantey@ksbstatesim.org
-      sub_folders: []
-    - name: MacArthur Bank Share
-      permissions:
-      - emailAddress: macarthur@ksbstatesim.org
-      sub_folders: []
-    - name: Lane Bank Share
-      permissions:
-      - emailAddress: lane@ksbstatesim.org
-      sub_folders: []
-    - name: Kyle Bank Share
-      permissions:
-      - emailAddress: kyle@ksbstatesim.org
-      sub_folders: []
-    - name: Klassen Bank Share
-      permissions:
-      - emailAddress: klassen@ksbstatesim.org
-      sub_folders: []
-    - name: King Bank Share
-      permissions:
-      - emailAddress: king@ksbstatesim.org
-      sub_folders: []
-    - name: Kennedy Bank Share
-      permissions:
-      - emailAddress: kennedy@ksbstatesim.org
-      sub_folders: []
-    - name: Johnson Bank Share
-      permissions:
-      - emailAddress: johnson@ksbstatesim.org
-      sub_folders: []
-    - name: Janssen Bank Share
-      permissions:
-      - emailAddress: janssen@ksbstatesim.org
-      sub_folders: []
-    - name: Icenogle Bank Share
-      permissions:
-      - emailAddress: icenogle@ksbstatesim.org
-      sub_folders: []
-    - name: Humanities Bank Share
-      permissions:
-      - emailAddress: humanities@ksbstatesim.org
-      sub_folders: []
-    - name: Hiatt Bank Share
-      permissions:
-      - emailAddress: hiatt@ksbstatesim.org
-      sub_folders: []
-    - name: Hasler Bank Share
-      permissions:
-      - emailAddress: hasler@ksbstatesim.org
-      sub_folders: []
-    - name: Haney Bank Share
-      permissions:
-      - emailAddress: haney@ksbstatesim.org
-      sub_folders: []
-    - name: Gardner Bank Share
-      permissions:
-      - emailAddress: gardner@ksbstatesim.org
-      sub_folders: []
-    - name: Finley Bank Share
-      permissions:
-      - emailAddress: finley@ksbstatesim.org
-      sub_folders: []
-    - name: Federalist Bank Share
-      permissions:
-      - emailAddress: fed@ksbstatesim.org
-      sub_folders: []
-    - name: Eisenhower Bank Share
-      permissions:
-      - emailAddress: eisenhower@ksbstatesim.org
-      sub_folders: []
-    - name: Economy Bank Share
-      permissions:
-      - emailAddress: economy@ksbstatesim.org
-      sub_folders: []
-    - name: Crum Bank Share
-      permissions:
-      - emailAddress: crum@ksbstatesim.org
-      sub_folders: []
-    - name: Chastain Bank Share
-      permissions:
-      - emailAddress: chastain@ksbstatesim.org
-      sub_folders: []
-    - name: Bramlage Bank Share
-      permissions:
-      - emailAddress: bramlage@ksbstatesim.org
-      sub_folders: []
-    - name: Bradley Bank Share
-      permissions:
-      - emailAddress: bradley@ksbstatesim.org
-      sub_folders: []
-    - name: Bluemke Bank Share
-      permissions:
-      - emailAddress: bluemke@ksbstatesim.org
-      sub_folders: []
-    - name: Bley Bank Share
-      permissions:
-      - emailAddress: bley@ksbstatesim.org
-      sub_folders: []
-    - name: Aylward Bank Share
-      permissions:
-      - emailAddress: aylward@ksbstatesim.org
-      sub_folders: []
-    - name: Dept of Economy Bank Share
-      permissions: []
-      sub_folders: []
-    - name: Dept of Humanities Bank Share
-      permissions: []
-      sub_folders: []
-    - name: Dept of Natural Resources Bank Share
-      permissions: []
-      sub_folders: []
-    - name: Newspaper Bank Share
-      permissions: []
-      sub_folders: []
-    - name: Misc.
-      permissions: []
-      sub_folders: []
+      - name: Dept of Humanities Bank Share
+        permissions: []
+        sub_folders: []
+      - name: Dept of Natural Resources Bank Share
+        permissions: []
+        sub_folders: []
+      - name: Newspaper Bank Share
+        permissions: []
+        sub_folders: []
+      - name: Misc.
+        permissions: []
+        sub_folders: []
