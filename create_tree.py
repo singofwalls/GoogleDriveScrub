@@ -3,7 +3,7 @@
 Sharing permissions are perserved.
 """
 
-from setup_drive_api import get_service, SCOPES
+from setup_drive_api import get_service, SCOPES, get_file_contents
 import yaml
 
 FOLDER_TYPE = "application/vnd.google-apps.folder"
@@ -94,9 +94,9 @@ def construct_tree(service, root_name, tree=[]):
 
     def crop_permission(permission):
         """Crop the permission dict to the relevant fields for storing."""
+        # Only need email now, Can easily add more fields if needed later
         email = permission["emailAddress"]
-        role = permission["role"]
-        return {"role": role, "emailAddress": email}
+        return {"emailAddress": email}
 
     def add_folder_dict(service, folder, tree, parent_permissions):
         """Create dict from folder and add to the tree."""
@@ -143,24 +143,6 @@ def construct_tree(service, root_name, tree=[]):
     construct_tree_rec(service, tree[-1]["sub_folders"], root_id, root_permissions)
 
 
-def get_root_names():
-    """Get a list of root names from the roots.txt file."""
-
-    # TODO: Test root.txt = "/" for using actual drive root as root
-    # TODO: Upload roots to correct path to root rather than the drive root
-    # TODO: Check if roots already exist and tell user to delete them first
-    # TODO: Determine if tracking role is really important --> current tree see's owner role swapped throughout
-    #       Allow for owner role assignment to root. Assume all other roles are writer
-    #       This will fix some dupe permissions
-
-    def is_not_comment(line):
-        """Check if the given line is a comment."""
-        return not line.startswith("#") and line
-
-    with open(ROOTS_FILE) as f:
-        return list(filter(is_not_comment, f.read().split("\n")))
-
-
 def main():
     """Run the program."""
     # Get drive service
@@ -168,8 +150,8 @@ def main():
 
     tree = []
     # Construct tree for each root
-    for root in get_root_names():
-        print("Constructing " + root["name"] + " folder tree from drive ...")
+    for root in get_file_contents(ROOTS_FILE):
+        print("Constructing " + root + " folder tree from drive ...")
         # Obtain subfolders in root
         construct_tree(service, root, tree)
     with open(TREE_FILE, "w") as f:
@@ -178,3 +160,9 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+# TODO: Test root.txt = "/" for using actual drive root as root
+# TODO: Upload roots to correct path to root rather than the drive root
+# TODO: Check if roots already exist and tell user to delete them first
+

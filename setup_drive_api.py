@@ -15,6 +15,17 @@ SCOPES = [
 TOKEN_FILE = "token.pickle"
 
 
+def get_file_contents(file):
+    """Get the contents of a file ignoring comments and new-line delimited."""
+
+    def is_not_comment(line):
+        """Check if the given line is a comment."""
+        return not line.startswith("#") and line
+
+    with open(file) as f:
+        return list(filter(is_not_comment, f.read().split("\n")))
+
+
 def get_service(scopes):
     """Set-up the drive api and return the obtained service object."""
     creds = None

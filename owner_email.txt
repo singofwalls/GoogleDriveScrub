@@ -1,0 +1,4 @@
+# The email to be marked as owner. Leave empty for no owner. Listings past first ignored.
+# Lines preceded with a '#' are ignored
+
+fourtestingporpoises@gmail.com

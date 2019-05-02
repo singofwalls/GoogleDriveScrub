@@ -1,6 +1,6 @@
 """Load a tree with sharing permissions from a yaml into the drive."""
 
-from setup_drive_api import get_service, SCOPES, HttpError
+from setup_drive_api import get_service, SCOPES, HttpError, get_file_contents
 import yaml
 from tqdm import tqdm
 import time
@@ -9,6 +9,7 @@ import json
 FOLDER_TYPE = "application/vnd.google-apps.folder"
 TREE_FILE = "tree.yaml"
 RATE_ERRORS = ["userRateLimitExceeded", "rateLimitExceeded", "backendError"]
+OWNER_FILE = "owner_email.txt"
 
 # Progress globals
 total_operations = 0
@@ -28,7 +29,7 @@ def get_tree():
             raise e
 
 
-def add_folder(service, folder, parent_id=None):
+def add_folder(service, folder, parent_id=None, owner=None):
     """Recursively upload all folders."""
 
     def upload_folder(service, folder, parent_id):
@@ -43,17 +44,22 @@ def add_folder(service, folder, parent_id=None):
         uploaded_folder_id = uploaded_folder["id"]
         return uploaded_folder_id
 
-    def set_permissions(service, folder, uploaded_folder_id):
+    def set_permissions(service, folder, uploaded_folder_id, owner=None):
         """Copy permissions from a given folder to the uploaded folder from id."""
         sleep_time = 1
 
         # Set permissions
         for permission in folder["permissions"]:
             email = permission["emailAddress"]
-            permission_role = permission["role"]
+
+            transferOwner = email == owner
+            if transferOwner:
+                permission_role = "owner"
+            else:
+                permission_role = "writer"
+
             body = {"role": permission_role, "emailAddress": email, "type": "user"}
             # Notification required to be sent for transfer of ownership
-            transferOwner = permission_role == "owner"
 
             uploaded = False
             while not uploaded:
@@ -89,7 +95,7 @@ def add_folder(service, folder, parent_id=None):
                         raise e
 
     uploaded_folder_id = upload_folder(service, folder, parent_id)
-    set_permissions(service, folder, uploaded_folder_id)
+    set_permissions(service, folder, uploaded_folder_id, owner=owner)
 
     # Recurse to upload sub_folders
     for sub_folder in folder["sub_folders"]:
@@ -130,10 +136,12 @@ def main():
     total_operations = calculate_operations(tree) + 1
     update_progress()
 
+    owner_email = get_file_contents(OWNER_FILE)[0]
+
     output("Uploading tree ...")
     for folder in tree:
         progress_bar.set_description("On " + folder["name"])
-        add_folder(service, folder)
+        add_folder(service, folder, owner=owner_email)
 
     progress_bar.close()
 
