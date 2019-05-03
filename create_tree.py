@@ -166,6 +166,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
-# TODO: Test root.txt = "/" for using actual drive root as root

@@ -38,17 +38,17 @@ def add_folder(service, folder, parent_id=None, owner=None):
 
     def upload_folder(service, folder, parent_id):
         """Upload a given folder and return the upload's id."""
+        if isinstance(parent_id, type(None)):
+            existing_parent = "root"
+        else:
+            existing_parent = parent_id
         try:
-            if isinstance(parent_id, type(None)):
-                existing_parent = "root"
-            else:
-                existing_parent = parent_id
             existing_folder = get_folder(service, folder["name"], existing_parent)
         except FileNotFoundError:
             existing_folder = None
 
         if not isinstance(existing_folder, type(None)) and not folder["permissions"]:
-            # Use existing folder if no permissions to be uploaded
+            # Use existing folder if uploading part of root path
             uploaded_folder_id = existing_folder["id"]
         else:
             # Upload new folder
