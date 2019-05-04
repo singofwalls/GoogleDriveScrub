@@ -47,7 +47,10 @@ def set_permissions(
         if isinstance(email, type(None)):
             continue
 
-        transferOwner = email.lower() == owner_email.lower()
+        if not isinstance(owner_email, type(None)):
+            transferOwner = email.lower() == owner_email.lower()
+        else:
+            transferOwner = False
         if transferOwner:
             permission_role = "owner"
         else:
@@ -145,7 +148,11 @@ def main():
     total_operations = calculate_operations(tree) + 1
     update_progress()
 
-    owner_email = get_file_contents(OWNER_FILE)[0]
+    owner_emails = get_file_contents(OWNER_FILE)
+    if owner_emails:
+        owner_email = owner_emails[0]
+    else:
+        owner_email = None
     substitutes = load_yaml(SUBSTITUTE_FILE)
 
     output("Uploading tree ...")
