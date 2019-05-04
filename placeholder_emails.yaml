@@ -1,0 +1,8 @@
+# Substitute placeholders in the tree.yaml with their given substitutes upon upload
+#  
+# placeholder: substitute_email
+# Placeholders should not contain any @ characters 
+# Case-sensitive.
+
+example_placeholder: mathewsreece@gmail.com
+example2: example2@email.com

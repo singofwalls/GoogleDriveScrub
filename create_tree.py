@@ -15,6 +15,9 @@ import yaml
 
 ROOTS_FILE = "roots.txt"
 TREE_FILE = "tree.yaml"
+TREE_HEADER = """# The tree structure which will be uploaded to drive upon execution of upload_tree.py
+
+"""
 
 
 def split_path(path):
@@ -71,13 +74,6 @@ def get_sub_folders(service, parent_id):
     return folders
 
 
-def crop_permission(permission):
-    """Crop the permission dict to the relevant fields for storing."""
-    # Only need email now, Can easily add more fields if needed later
-    email = permission["emailAddress"]
-    return {"emailAddress": email}
-
-
 def add_folder_dict_to_tree(folder, tree, parent_permissions=[]):
     """Create dict from folder and add to the tree."""
 
@@ -87,9 +83,9 @@ def add_folder_dict_to_tree(folder, tree, parent_permissions=[]):
         if "deleted" in permission and permission["deleted"]:
             continue
 
-        permission_cropped = crop_permission(permission)
-        if permission_cropped not in parent_permissions:
-            permissions.append(permission_cropped)
+        email = permission["emailAddress"]
+        if email not in parent_permissions:
+            permissions.append(email)
     tree.append({"name": folder["name"], "permissions": permissions, "sub_folders": []})
 
 
@@ -98,6 +94,10 @@ def construct_tree(service, full_root_name, tree=[]):
 
     :param tree: A list of subtrees which is altered in-place
     """
+
+    def get_emails(permissions):
+        """Return a list of emails from the given permission dict."""
+        return list(map(lambda p: p["emailAddress"], permissions))
 
     def construct_tree_rec(service, tree, parent_id, parent_permissions):
         """Recusively construct the tree."""
@@ -108,21 +108,19 @@ def construct_tree(service, full_root_name, tree=[]):
             folder_id = folder["id"]
             add_folder_dict_to_tree(folder, tree, parent_permissions)
 
-            combined_permissions = []
-            cropped_permissions = list(map(crop_permission, folder["permissions"]))
-            for permission in cropped_permissions + parent_permissions:
-                if permission not in combined_permissions:
-                    combined_permissions.append(permission)
+            combined_permissions = set()
+            emails = get_emails(folder["permissions"])
+            combined_permissions.update(emails + parent_permissions)
 
             construct_tree_rec(
-                service, tree[-1]["sub_folders"], folder_id, combined_permissions
+                service, tree[-1]["sub_folders"], folder_id, list(combined_permissions)
             )
 
     root_folder = get_root_folder(service, full_root_name)
     root_id = root_folder["id"]
 
     add_folder_dict_to_tree(root_folder, tree)
-    root_permissions = list(map(crop_permission, root_folder["permissions"]))
+    root_permissions = get_emails(root_folder["permissions"])
 
     construct_tree_rec(service, tree[-1]["sub_folders"], root_id, root_permissions)
 
@@ -160,7 +158,10 @@ def main():
         # Obtain subfolders in root
         sub_tree = get_sub_tree(root, tree)
         construct_tree(service, root, sub_tree)
+
     with open(TREE_FILE, "w") as f:
+        f.write(TREE_HEADER)
+    with open(TREE_FILE, "a") as f:
         yaml.dump(tree, f)
 
 
