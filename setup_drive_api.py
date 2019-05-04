@@ -8,6 +8,7 @@ from google.auth.transport.requests import Request
 from googleapiclient.errors import HttpError
 import json
 import time
+import os
 
 # Delete token.pickle if scopes changed
 SCOPES = [
@@ -128,3 +129,10 @@ def get_service(scopes):
 
     service = build("drive", "v3", credentials=creds)
     return service
+
+
+if __name__ == "__main__":
+    # Reauth user
+    if os.path.exists(TOKEN_FILE):
+        os.remove(TOKEN_FILE)
+    get_service(SCOPES)
