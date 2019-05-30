@@ -5,7 +5,6 @@
   sub_folders:
   - name: Curriculum
     permissions:
-    - example_placeholder
     - it@ksbstatesim.org
     - john.shively@ksbstatesim.org
     - pumposh@live.com
@@ -15,6 +14,7 @@
     - JpShively1@gmail.com
     - thaddeustuck@gmail.com
     - ring.scott1@gmail.com
+    - MathewsReece@gmail.com
     - keeprunning218@gmail.com
     sub_folders:
     - name: Kansas State Senate
@@ -47,181 +47,86 @@
     - name: Counties Share
       permissions: []
       sub_folders:
-      - name: Seitz Share
-        permissions:
-        - seitz@ksbstatesim.org
-        sub_folders:
-        - name: Wiles Share
-          permissions:
-          - wiles@ksbstatesim.org
-          sub_folders: []
-        - name: Whorley Share
-          permissions:
-          - whorley@ksbstatesim.org
-          sub_folders: []
-        - name: Werring Share
-          permissions:
-          - werring@ksbstatesim.org
-          sub_folders: []
-      - name: Powell Share
-        permissions:
-        - powell@ksbstatesim.org
-        sub_folders:
-        - name: Spigarelli Share
-          permissions:
-          - spigarelli@ksbstatesim.org
-          sub_folders: []
-        - name: Shelton Share
-          permissions:
-          - shelton@ksbstatesim.org
-          sub_folders: []
-        - name: Schrag Share
-          permissions:
-          - schrag@ksbstatesim.org
-          sub_folders: []
-      - name: Pershing Share
-        permissions:
-        - pershing@ksbstatesim.org
-        sub_folders:
-        - name: Schmitt Share
-          permissions:
-          - schmitt@ksbstatesim.org
-          sub_folders: []
-        - name: Raymond Share
-          permissions:
-          - raymond@ksbstatesim.org
-          sub_folders: []
-        - name: Perrill Share
-          permissions:
-          - perrill@ksbstatesim.org
-          sub_folders: []
-      - name: Patton Share
-        permissions:
-        - patton@ksbstatesim.org
-        sub_folders:
-        - name: OLeary Share
-          permissions:
-          - o'leary@ksbstatesim.org
-          sub_folders: []
-        - name: Newman Share
-          permissions:
-          - newman@ksbstatesim.org
-          sub_folders: []
-        - name: McCoy Share
-          permissions:
-          - mccoy@ksbstatesim.org
-          sub_folders: []
-      - name: Marshall Share
-        permissions:
-        - marshall@ksbstatesim.org
-        sub_folders:
-        - name: Mantey Share
-          permissions:
-          - mantey@ksbstatesim.org
-          sub_folders: []
-        - name: Lane Share
-          permissions:
-          - lane@ksbstatesim.org
-          sub_folders: []
-        - name: Kyle Share
-          permissions:
-          - kyle@ksbstatesim.org
-          sub_folders: []
-      - name: MacArthur Share
-        permissions:
-        - macarthur@ksbstatesim.org
-        sub_folders:
-        - name: Klassen Share
-          permissions:
-          - klassen@ksbstatesim.org
-          sub_folders: []
-        - name: Johnson Share
-          permissions:
-          - johnson@ksbstatesim.org
-          sub_folders: []
-        - name: Janssen Share
-          permissions:
-          - janssen@ksbstatesim.org
-          sub_folders: []
-      - name: King Share
-        permissions:
-        - king@ksbstatesim.org
-        sub_folders:
-        - name: Icenogle Share
-          permissions:
-          - icenogle@ksbstatesim.org
-          sub_folders: []
-        - name: Hiatt Share
-          permissions:
-          - hiatt@ksbstatesim.org
-          sub_folders: []
-        - name: Hasler Share
-          permissions:
-          - hasler@ksbstatesim.org
-          sub_folders: []
-      - name: Kennedy Share
-        permissions:
-        - kennedy@ksbstatesim.org
-        sub_folders:
-        - name: Haney Share
-          permissions:
-          - haney@ksbstatesim.org
-          sub_folders: []
-        - name: Gardner Share
-          permissions:
-          - gardner@ksbstatesim.org
-          sub_folders: []
-        - name: Finley Share
-          permissions:
-          - finley@ksbstatesim.org
-          sub_folders: []
       - name: Eisenhower Share
         permissions:
         - eisenhower@ksbstatesim.org
         sub_folders:
-        - name: Crum Share
+        - name: Bley Share
           permissions:
-          - crum@ksbstatesim.org
+          - bley@ksbstatesim.org
+          sub_folders: []
+        - name: Bluemke Share
+          permissions:
+          - bluemke@ksbstatesim.org
           sub_folders: []
         - name: Chastain Share
           permissions:
           - chastain@ksbstatesim.org
           sub_folders: []
-        - name: Bramlage Share
-          permissions:
-          - bramlage@ksbstatesim.org
-          sub_folders: []
-      - name: Bradley Share
+      - name: Kennedy Share
         permissions:
-        - bradley@ksbstatesim.org
+        - kennedy@ksbstatesim.org
         sub_folders:
-        - name: Bluemke Share
+        - name: Finley Share
           permissions:
-          - bluemke@ksbstatesim.org
+          - finley@ksbstatesim.org
           sub_folders: []
-        - name: Bley Share
+        - name: Gardner Share
           permissions:
-          - bley@ksbstatesim.org
+          - gardner@ksbstatesim.org
           sub_folders: []
-        - name: Aylward Share
+        - name: Johnson Share
           permissions:
-          - aylward@ksbstatesim.org
+          - johnson@ksbstatesim.org
           sub_folders: []
-        - name: Bramlage Share
-          permissions: []
+      - name: Patton Share
+        permissions:
+        - patton@ksbstatesim.org
+        sub_folders:
+        - name: Klassen Share
+          permissions:
+          - klassen@ksbstatesim.org
           sub_folders: []
-    - name: Departments Share
-      permissions: []
-      sub_folders:
-      - name: Dept. of Humanities Share
-        permissions: []
-        sub_folders: []
-      - name: Dept. of Natural Resources Share
-        permissions: []
-        sub_folders: []
-      - name: Dept. of Economy Share
-        permissions: []
-        sub_folders: []
+        - name: Lane Share
+          permissions:
+          - lane@ksbstatesim.org
+          sub_folders: []
+        - name: O'Leary Share
+          permissions:
+          - o'leary@ksbstatesim.org
+          sub_folders: []
+      - name: Pershing Share
+        permissions:
+        - pershing@ksbstatesim.org
+        sub_folders:
+        - name: Schrag Share
+          permissions:
+          - schrag@ksbstatesim.org
+          sub_folders: []
+        - name: Shelton Share
+          permissions:
+          - shelton@ksbstatesim.org
+          sub_folders: []
+        - name: Spigarelli Share
+          permissions:
+          - spigarelli@ksbstatesim.org
+          sub_folders: []
+      - name: Powell Share
+        permissions:
+        - powell@ksbstatesim.org
+        sub_folders:
+        - name: Thomson Share
+          permissions:
+          - thomson@ksbstatesim.org
+          sub_folders: []
+        - name: Werring Share
+          permissions:
+          - werring@ksbstatesim.org
+          sub_folders: []
+        - name: Whorley Share
+          permissions:
+          - whorley@ksbstatesim.org
+          sub_folders: []
   - name: Bank
     permissions:
     - john.shively@ksbstatesim.org
@@ -241,10 +146,6 @@
     - name: Entity Folders
       permissions: []
       sub_folders:
-      - name: Wiles Bank Share
-        permissions:
-        - wiles@ksbstatesim.org
-        sub_folders: []
       - name: Whorley Bank Share
         permissions:
         - whorley@ksbstatesim.org
@@ -252,6 +153,10 @@
       - name: Werring Bank Share
         permissions:
         - werring@ksbstatesim.org
+        sub_folders: []
+      - name: Thomson Bank Share
+        permissions:
+        - thomson@ksbstatesim.org
         sub_folders: []
       - name: Spigarelli Bank Share
         permissions:
@@ -269,14 +174,6 @@
         permissions:
         - schrag@ksbstatesim.org
         sub_folders: []
-      - name: Schmitt Bank Share
-        permissions:
-        - schmitt@ksbstatesim.org
-        sub_folders: []
-      - name: Raymond Bank Share
-        permissions:
-        - raymond@ksbstatesim.org
-        sub_folders: []
       - name: Powell Bank Share
         permissions:
         - powell@ksbstatesim.org
@@ -285,25 +182,13 @@
         permissions:
         - pershing@ksbstatesim.org
         sub_folders: []
-      - name: Perrill Bank Share
-        permissions:
-        - perrill@ksbstatesim.org
-        sub_folders: []
       - name: Patton Bank Share
         permissions:
         - patton@ksbstatesim.org
         sub_folders: []
-      - name: OLeary Bank Share
+      - name: O'Leary Bank Share
         permissions:
         - o'leary@ksbstatesim.org
-        sub_folders: []
-      - name: Newman Bank Share
-        permissions:
-        - newman@ksbstatesim.org
-        sub_folders: []
-      - name: Natural Resources Bank Share
-        permissions:
-        - naturalresources@ksbstatesim.org
         sub_folders: []
       - name: Nationalist Bank Share
         permissions:
@@ -313,37 +198,13 @@
         permissions:
         - media@ksbstatesim.org
         sub_folders: []
-      - name: McCoy Bank Share
-        permissions:
-        - mccoy@ksbstatesim.org
-        sub_folders: []
-      - name: Marshall Bank Share
-        permissions:
-        - marshall@ksbstatesim.org
-        sub_folders: []
-      - name: Mantey Bank Share
-        permissions:
-        - mantey@ksbstatesim.org
-        sub_folders: []
-      - name: MacArthur Bank Share
-        permissions:
-        - macarthur@ksbstatesim.org
-        sub_folders: []
       - name: Lane Bank Share
         permissions:
         - lane@ksbstatesim.org
         sub_folders: []
-      - name: Kyle Bank Share
-        permissions:
-        - kyle@ksbstatesim.org
-        sub_folders: []
       - name: Klassen Bank Share
         permissions:
         - klassen@ksbstatesim.org
-        sub_folders: []
-      - name: King Bank Share
-        permissions:
-        - king@ksbstatesim.org
         sub_folders: []
       - name: Kennedy Bank Share
         permissions:
@@ -352,30 +213,6 @@
       - name: Johnson Bank Share
         permissions:
         - johnson@ksbstatesim.org
-        sub_folders: []
-      - name: Janssen Bank Share
-        permissions:
-        - janssen@ksbstatesim.org
-        sub_folders: []
-      - name: Icenogle Bank Share
-        permissions:
-        - icenogle@ksbstatesim.org
-        sub_folders: []
-      - name: Humanities Bank Share
-        permissions:
-        - humanities@ksbstatesim.org
-        sub_folders: []
-      - name: Hiatt Bank Share
-        permissions:
-        - hiatt@ksbstatesim.org
-        sub_folders: []
-      - name: Hasler Bank Share
-        permissions:
-        - hasler@ksbstatesim.org
-        sub_folders: []
-      - name: Haney Bank Share
-        permissions:
-        - haney@ksbstatesim.org
         sub_folders: []
       - name: Gardner Bank Share
         permissions:
@@ -393,25 +230,9 @@
         permissions:
         - eisenhower@ksbstatesim.org
         sub_folders: []
-      - name: Economy Bank Share
-        permissions:
-        - economy@ksbstatesim.org
-        sub_folders: []
-      - name: Crum Bank Share
-        permissions:
-        - crum@ksbstatesim.org
-        sub_folders: []
       - name: Chastain Bank Share
         permissions:
         - chastain@ksbstatesim.org
-        sub_folders: []
-      - name: Bramlage Bank Share
-        permissions:
-        - bramlage@ksbstatesim.org
-        sub_folders: []
-      - name: Bradley Bank Share
-        permissions:
-        - bradley@ksbstatesim.org
         sub_folders: []
       - name: Bluemke Bank Share
         permissions:
@@ -421,18 +242,17 @@
         permissions:
         - bley@ksbstatesim.org
         sub_folders: []
-      - name: Aylward Bank Share
-        permissions:
-        - aylward@ksbstatesim.org
-        sub_folders: []
       - name: Dept of Economy Bank Share
-        permissions: []
+        permissions:
+        - economy@ksbstatesim.org
         sub_folders: []
       - name: Dept of Humanities Bank Share
-        permissions: []
+        permissions:
+        - humanities@ksbstatesim.org
         sub_folders: []
       - name: Dept of Natural Resources Bank Share
-        permissions: []
+        permissions:
+        - naturalresources@ksbstatesim.org
         sub_folders: []
       - name: Newspaper Bank Share
         permissions: []
