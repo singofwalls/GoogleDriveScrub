@@ -1,5 +1,2 @@
 # Newline-delimited list of root folders to scan and reconstruct
 # Lines preceded with a '#' are ignored
-
-BSroot/Curriculum
-BSroot/Bank
