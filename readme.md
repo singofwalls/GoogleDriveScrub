@@ -31,7 +31,4 @@ To upload a tree YAML file to your Google Drive,
 
 # Contact
 Reece Mathews  
-Phone: (785) 643-6353  
 Email: mathewsreece@gmail.com  
-Slack: [KSBS: UAZH8P875](ksbs.slack.com/team/UAZH8P875)  
-Everything else: [compiled.social/reecemathews](https://compiled.social/reecemathews)
